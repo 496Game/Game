@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Raycast : MonoBehaviour {
+public class EmilyRaycast : MonoBehaviour {
 	void Update() {
 		if (Input.GetMouseButton(0)) {
             RaycastHit hit;
