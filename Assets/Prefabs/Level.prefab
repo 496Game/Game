@@ -421,7 +421,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -437,7 +436,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -455,7 +453,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -471,7 +468,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -489,7 +485,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 2
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -505,7 +500,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -523,7 +517,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -539,7 +532,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -557,7 +549,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -573,7 +564,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -591,12 +581,13 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 2
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+  - {fileID: 2100000, guid: 0cd3d46f0464543f39228dcc36f6cd95, type: 2}
+  - {fileID: 2100000, guid: 5fd7200a2456747d09ce631205724e6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -607,7 +598,6 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -625,7 +615,6 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -641,7 +630,6 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -723,9 +711,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
 --- !u!64 &64855980158376232
@@ -737,9 +725,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Convex: 0
-  m_CookingOptions: 14
+  m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
 --- !u!65 &65038133591262624
@@ -1315,14 +1303,14 @@ MonoBehaviour:
       flipV: 0
       swapUV: 0
       fill: 1
-      scale: {x: 1, y: 1}
+      scale: {x: 0.1, y: 0.2}
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
       localPivot: {x: -12.152596, y: 11.889457}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    _mat: {fileID: 2100000, guid: 0cd3d46f0464543f39228dcc36f6cd95, type: 2}
     manualUV: 0
     elementGroup: -1
     textureGroup: -1
@@ -1373,14 +1361,14 @@ MonoBehaviour:
       flipV: 0
       swapUV: 0
       fill: 1
-      scale: {x: 1, y: 1}
+      scale: {x: 0.1, y: 0.2}
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
       localPivot: {x: -31.249094, y: 12.540302}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    _mat: {fileID: 2100000, guid: 0cd3d46f0464543f39228dcc36f6cd95, type: 2}
     manualUV: 0
     elementGroup: -1
     textureGroup: -1
@@ -1431,14 +1419,14 @@ MonoBehaviour:
       flipV: 0
       swapUV: 0
       fill: 1
-      scale: {x: 1, y: 1}
+      scale: {x: 0.1, y: 0.2}
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
       localPivot: {x: -36.011196, y: 0.0000009536743}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    _mat: {fileID: 2100000, guid: 0cd3d46f0464543f39228dcc36f6cd95, type: 2}
     manualUV: 0
     elementGroup: -1
     textureGroup: -1
@@ -1489,14 +1477,14 @@ MonoBehaviour:
       flipV: 0
       swapUV: 0
       fill: 1
-      scale: {x: 1, y: 1}
+      scale: {x: 0.1, y: 0.2}
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
       localPivot: {x: -31.249092, y: -12.540301}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    _mat: {fileID: 2100000, guid: 0cd3d46f0464543f39228dcc36f6cd95, type: 2}
     manualUV: 0
     elementGroup: -1
     textureGroup: -1
@@ -1547,14 +1535,14 @@ MonoBehaviour:
       flipV: 0
       swapUV: 0
       fill: 1
-      scale: {x: 1, y: 1}
+      scale: {x: 0.1, y: 0.2}
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -12.1525955, y: -11.889455}
+      localPivot: {x: -12.1525955, y: -11.889454}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    _mat: {fileID: 2100000, guid: 0cd3d46f0464543f39228dcc36f6cd95, type: 2}
     manualUV: 0
     elementGroup: -1
     textureGroup: -1
@@ -2308,7 +2296,7 @@ MonoBehaviour:
       localPivot: {x: 6.832767, y: -14.694631}
       localSize: {x: 0, y: 0}
       anchor: 9
-    _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+    _mat: {fileID: 2100000, guid: 5fd7200a2456747d09ce631205724e6d, type: 2}
     manualUV: 0
     elementGroup: -1
     textureGroup: -1
@@ -4697,42 +4685,42 @@ MonoBehaviour:
   - {x: 17.251183, y: 23.793407}
   - {x: 22.722477, y: 0.014494821}
   - {x: 24.285236, y: 2.166107}
-  - {x: -17.271137, y: 23.778913}
-  - {x: 0, y: 0}
-  - {x: -24.305193, y: 2.151613}
-  - {x: -22.742432, y: 0.00000077095103}
+  - {x: -12.664451, y: 14.267348}
+  - {x: -10.937337, y: 9.511565}
+  - {x: -13.367856, y: 9.941888}
+  - {x: -13.21158, y: 9.511565}
   - {x: 17.281698, y: 23.79024}
   - {x: 45.231735, y: 14.705956}
   - {x: 24.304432, y: 2.15926}
   - {x: 26.833462, y: 1.337277}
-  - {x: -45.224113, y: 14.6825}
-  - {x: -17.274075, y: 23.766783}
-  - {x: -26.825838, y: 1.3138212}
-  - {x: -24.296808, y: 2.1358042}
+  - {x: -32.646595, y: 12.968741}
+  - {x: -29.851593, y: 14.785599}
+  - {x: -30.806768, y: 10.295006}
+  - {x: -30.553865, y: 10.459402}
   - {x: 45.236332, y: 14.69463}
   - {x: 45.236332, y: -14.694628}
   - {x: 26.835386, y: 1.3296299}
   - {x: 26.835386, y: -1.3296292}
-  - {x: -45.21167, y: -14.694628}
-  - {x: -45.21167, y: 14.69463}
-  - {x: -26.810722, y: -1.3296292}
-  - {x: -26.810722, y: 1.3296299}
+  - {x: -36.931244, y: -2.9389248}
+  - {x: -36.931244, y: 2.9389267}
+  - {x: -35.09115, y: -0.26592508}
+  - {x: -35.09115, y: 0.26592675}
   - {x: 45.231735, y: -14.705955}
   - {x: 17.281694, y: -23.79024}
   - {x: 26.833462, y: -1.3372763}
   - {x: 24.30443, y: -2.1592588}
-  - {x: -17.27407, y: -23.766783}
-  - {x: -45.224113, y: -14.682498}
-  - {x: -24.296806, y: -2.135803}
-  - {x: -26.825838, y: -1.3138205}
+  - {x: -29.85159, y: -14.785598}
+  - {x: -32.646595, y: -12.96874}
+  - {x: -30.553864, y: -10.459402}
+  - {x: -30.806767, y: -10.295005}
   - {x: 17.251179, y: -23.793407}
   - {x: -0.019955423, y: -0.014489678}
   - {x: 24.285234, y: -2.1661057}
   - {x: 22.722477, y: -0.01449328}
-  - {x: 0, y: 0.0000043706796}
-  - {x: -17.271133, y: -23.778913}
-  - {x: -22.742432, y: 0.0000007702397}
-  - {x: -24.305191, y: -2.1516118}
+  - {x: -10.937336, y: -9.511562}
+  - {x: -12.66445, y: -14.267346}
+  - {x: -13.211579, y: -9.511563}
+  - {x: -13.367855, y: -9.941886}
   - {x: -25.106033, y: 0.31999704}
   - {x: -22.446777, y: 0.31999707}
   - {x: -25.331993, y: -21.893007}
@@ -6395,9 +6383,49 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
-  m_selectedTriangles: fa000000
+  m_selectedFaces: 0b0000000d0000000f0000001100000013000000
+  m_SelectedEdges:
+  - x: 44
+    y: 45
+  - x: 46
+    y: 44
+  - x: 45
+    y: 47
+  - x: 47
+    y: 46
+  - x: 52
+    y: 53
+  - x: 54
+    y: 52
+  - x: 53
+    y: 55
+  - x: 55
+    y: 54
+  - x: 60
+    y: 61
+  - x: 62
+    y: 60
+  - x: 61
+    y: 63
+  - x: 63
+    y: 62
+  - x: 68
+    y: 69
+  - x: 70
+    y: 68
+  - x: 69
+    y: 71
+  - x: 71
+    y: 70
+  - x: 76
+    y: 77
+  - x: 78
+    y: 76
+  - x: 77
+    y: 79
+  - x: 79
+    y: 78
+  m_selectedTriangles: 2c0000002d0000002e0000002d0000002f0000002e0000003400000035000000360000003500000037000000360000003c0000003d0000003e0000003d0000003f0000003e0000004400000045000000460000004500000047000000460000004c0000004d0000004e0000004d0000004f0000004e000000
 --- !u!114 &114567571889532592
 MonoBehaviour:
   m_ObjectHideFlags: 1
