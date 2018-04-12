@@ -4,11 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - a
-  - b
-  - c
-  - d
-  - e
+  - EmilyGame
+  - NicoleGame
+  - LukeGame
+  - MaxGame
   layers:
   - Default
   - TransparentFX
