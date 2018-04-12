@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ZachRaycast : MonoBehaviour {
 	void Update() {
-		if (Input.GetMouseButton(0)) {
+		if (Input.GetMouseButtonUp(0)) {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit)) {
                 if (hit.rigidbody != null) {
 					if (hit.transform.gameObject.layer == 8) {
 						var tag = hit.transform.gameObject.tag;
+
+						Debug.Log("Why");
 
 						if (tag == "MaxGame") {
 							GetComponent<GameControl>().MaxGame();
