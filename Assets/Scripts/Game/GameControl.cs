@@ -21,7 +21,7 @@ public class GameControl : MonoBehaviour {
 	public GameObject Door;
 
 	public Text Timer;
-	float TimeRemaining = 10f;
+	float TimeRemaining = 600f;
 
 	GameObject PreviousGame;
 
