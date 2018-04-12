@@ -181,6 +181,37 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 15416664}
+--- !u!1 &102606451 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1476424955639062, guid: b808813e022eb954d9462be96e4f653e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1147154252}
+--- !u!1 &129166161 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1958682287468650, guid: b808813e022eb954d9462be96e4f653e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1147154252}
+--- !u!1 &320959885 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1412811331688578, guid: b808813e022eb954d9462be96e4f653e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1147154252}
+--- !u!1 &521565107 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1732404212600776, guid: b808813e022eb954d9462be96e4f653e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1147154252}
+--- !u!114 &538509726 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114448905096244538, guid: b808813e022eb954d9462be96e4f653e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1147154252}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &637495270 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1928413225159016, guid: b808813e022eb954d9462be96e4f653e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1147154252}
 --- !u!1 &914586765
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +345,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: MaxGlass
+      value: 
+      objectReference: {fileID: 521565107}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: EmilyGlass
+      value: 
+      objectReference: {fileID: 637495270}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: LukeGlass
+      value: 
+      objectReference: {fileID: 320959885}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: NicoleGlass
+      value: 
+      objectReference: {fileID: 129166161}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: Door
+      value: 
+      objectReference: {fileID: 102606451}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: Timer
+      value: 
+      objectReference: {fileID: 538509726}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -322,7 +383,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1174
+  m_Name: pb_Mesh-1844
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -516,10 +577,18 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1081411831}
-    - target: {fileID: 114927347164459768, guid: b808813e022eb954d9462be96e4f653e,
+    - target: {fileID: 95478208342227540, guid: b808813e022eb954d9462be96e4f653e,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b5bc5b0b8f28ed54691ddf2ee184bc2e, type: 2}
+    - target: {fileID: 1157530754216584, guid: b808813e022eb954d9462be96e4f653e, type: 2}
+      propertyPath: m_Name
+      value: Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078951912994392, guid: b808813e022eb954d9462be96e4f653e, type: 2}
+      propertyPath: m_Name
+      value: Timer Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b808813e022eb954d9462be96e4f653e, type: 2}

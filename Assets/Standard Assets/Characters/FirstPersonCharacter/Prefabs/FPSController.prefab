@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 114034764853065064}
   m_Layer: 0
   m_Name: FPSController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,6 +357,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 0
+  MaxGlass: {fileID: 0}
+  EmilyGlass: {fileID: 0}
+  LukeGlass: {fileID: 0}
+  NicoleGlass: {fileID: 0}
+  Door: {fileID: 0}
+  Timer: {fileID: 0}
+  TimeRemaining: 600
 --- !u!114 &114254337054901078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,7 +397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8d5bdae7b98c409862f6c7307defb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameController: {fileID: 0}
 --- !u!114 &114981221824511400
 MonoBehaviour:
   m_ObjectHideFlags: 1
