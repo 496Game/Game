@@ -32,11 +32,11 @@ public class EnemyMove : movement {
 	// Update is called once per frame
 	void Update () {
 
-        if(Input.GetKeyDown(KeyCode.Space))
+       /* if(Input.GetKeyDown(KeyCode.Space))
         {
             structureMove();
             
-        }
+        }*/
 
         Raycasting();
         print("onX" + number +": " + onX);
@@ -52,7 +52,7 @@ public class EnemyMove : movement {
     {
 
     }*/
-    void structureMove()
+    public void structureMove()
     {
         int forever = 7 - count;
         if (forever < 0)
