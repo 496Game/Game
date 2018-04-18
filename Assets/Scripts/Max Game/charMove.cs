@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class charMove : movement {
 
+
 	// Use this for initialization
 	void Start () {
         SetUp();
@@ -14,21 +15,29 @@ public class charMove : movement {
         if (Input.GetKeyDown(KeyCode.A))
         {
             moveLeft();
+			man.StartCoroutine("MoveOrder");
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             moveRight();
+			man.StartCoroutine("MoveOrder");
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            moveUp();
+			moveUp();
+			man.StartCoroutine("MoveOrder");
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
             moveDown();
+			man.StartCoroutine("MoveOrder");
         }
 
+
+
     }
+
+
 }

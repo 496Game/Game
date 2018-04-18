@@ -8,6 +8,10 @@ TagManager:
   - NicoleGame
   - LukeGame
   - MaxGame
+  - Enemy
+  - player
+  - wall
+  - manager
   layers:
   - Default
   - TransparentFX
