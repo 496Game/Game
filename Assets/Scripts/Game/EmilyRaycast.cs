@@ -6,6 +6,8 @@ public class EmilyRaycast : MonoBehaviour {
 
 	public char[] notes = new char[] {'d','a','b'} ;
 	public int ap = 0 ; // array pointer
+	public bool emWinCondition = false ; // the varable checks if you have won or not
+
 	void Update() {
 		if (Input.GetMouseButtonDown(0)) {
             RaycastHit hit;
@@ -19,7 +21,10 @@ public class EmilyRaycast : MonoBehaviour {
 
 					if (notes [ap].ToString () == currentNote) {
 						print ("Correct");
-						ap++;
+						ap+=1;
+						if (ap == notes.Length) {
+							emWinCondition = true;
+						}
 					} else {
 						print ("Bad");
 						ap = 0;
@@ -27,5 +32,6 @@ public class EmilyRaycast : MonoBehaviour {
 				} // end if
 			} // end if
         } // end if
+
 	} // end Update()
 }
