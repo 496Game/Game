@@ -12,32 +12,48 @@ public class charMove : movement {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            moveLeft();
-			man.StartCoroutine("MoveOrder");
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            moveRight();
-			man.StartCoroutine("MoveOrder");
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-			moveUp();
-			man.StartCoroutine("MoveOrder");
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            moveDown();
-			man.StartCoroutine("MoveOrder");
-        }
+        
 
 
 
     }
+
+	IEnumerator PlayerMove()
+	{
+		
+		bool moved = false;
+		if (Input.GetKeyDown(KeyCode.A))
+		{
+			moveLeft();
+			moved = true;
+
+		}
+		if (Input.GetKeyDown(KeyCode.D))
+		{
+			moveRight();
+			moved = true;
+		}
+
+		if (Input.GetKeyDown(KeyCode.W))
+		{
+			moveUp();
+			moved = true;
+		}
+
+		if (Input.GetKeyDown(KeyCode.S))
+		{
+			moveDown();
+			moved = true;
+		}
+
+		if (moved) 
+		{
+			man.StartCoroutine("MoveOrder");
+		}
+			
+
+		return null;
+	}
 
 
 }

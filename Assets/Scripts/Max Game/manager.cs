@@ -18,6 +18,8 @@ public class manager : MonoBehaviour {
 	protected Vector3 enemyStart3;
 	protected Vector3 playerStart;
 
+	charMove character;
+
 	public bool reset = false;
     // Use this for initialization
     void Start () {
@@ -29,6 +31,8 @@ public class manager : MonoBehaviour {
 		enemyStart2 = GO2.transform.position;
 		enemyStart3 = GO3.transform.position;
 		playerStart = player.transform.position;
+
+		character = GameObject.FindGameObjectWithTag ("player").GetComponent<charMove>();
 
 
     }
@@ -42,7 +46,7 @@ public class manager : MonoBehaviour {
 
     IEnumerator MoveOrder()
     {
-		
+		yield return new WaitForSeconds(1);
         enemy1.structureMove();
 		if (reset)
 			yield break;
@@ -52,6 +56,8 @@ public class manager : MonoBehaviour {
 			yield break;
         yield return new WaitForSeconds(1);
         enemy3.structureMove();
+		character.StopCoroutine ("PlayerMove");
+
     }
 
 	IEnumerator Reset()
