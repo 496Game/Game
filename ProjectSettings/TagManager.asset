@@ -4,14 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - lever
   - EmilyGame
   - NicoleGame
   - LukeGame
   - MaxGame
-  - Enemy
-  - player
-  - wall
-  - manager
+  - e
+  - c
+  - tonePlayer
+  - b
+  - d
+  - a
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - GameButtons
   - 
   - 
   - 

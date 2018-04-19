@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class GameControl : MonoBehaviour {
 	public enum GameState {Start, Max, Emily, Luke, Nicole, Win, Lose};
@@ -21,13 +22,16 @@ public class GameControl : MonoBehaviour {
 	public GameObject Door;
 
 	public Text Timer;
-	float TimeRemaining = 10f;
+	float TimeRemaining = 600f;
+	float EndTime = 0;
 
 	GameObject PreviousGame;
 
 	void Start() {
 		CurrentState = GameState.Start;
 		StartCoroutine(GameTimer());
+		//CurrentState = GameState.Win;
+		//SwitchGames();
 	}
 
 	public void MaxGame() {
@@ -85,6 +89,23 @@ public class GameControl : MonoBehaviour {
 				Door.GetComponent<Animator>().SetTrigger("DoorOpen");
 				Door.GetComponent<Collider>().enabled = true;
 				StopCoroutine("GameTimer");
+				PlayerPrefs.SetFloat("LastWin", EndTime);
+
+				var Scores = PlayerPrefs.GetString("scores", "0;0;0;0;0").Split(';').Select(s => float.Parse(s)).ToArray();
+                for (var ScoresIndex = 0; ScoresIndex < Scores.Length; ScoresIndex++) {
+                    if (EndTime > Scores[ScoresIndex]) {
+                        for (var ScoresShiftIndex = Scores.Length - 1; ScoresShiftIndex > ScoresIndex; ScoresShiftIndex--) {
+                            Scores[ScoresShiftIndex] = Scores[ScoresShiftIndex - 1];
+                        }
+
+                        Scores[ScoresIndex] = EndTime;
+
+                        break;
+                    }
+                }
+
+				PlayerPrefs.SetString("scores", string.Join(";", Scores.Select(i => i.ToString()).ToArray()));
+
 				break;
 			case GameState.Lose:
 				SceneManager.LoadScene("Loss");
@@ -106,6 +127,8 @@ public class GameControl : MonoBehaviour {
 		for (float i = TimeRemaining; i >= 0; i--) {
 			yield return new WaitForSeconds(1);
 			Timer.text = "Time Remaining: " + Mathf.Floor((i / 60)).ToString("00") + ":" + (i % 60).ToString("00");
+			EndTime = i;
+			PlayerPrefs.SetFloat("LastWin", i);
 
 			if (i <= 0) {
 				CurrentState = GameState.Lose;

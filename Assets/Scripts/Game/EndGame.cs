@@ -7,7 +7,8 @@ public class EndGame : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
 			Debug.Log("Game Win");
-			SceneManager.LoadScene("Loss");
+			Debug.Log(PlayerPrefs.GetFloat("LastWin"));
+			SceneManager.LoadScene("Win");
 		}
     }
 }

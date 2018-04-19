@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5400000}
   - component: {fileID: 8200000}
   - component: {fileID: 114922921447881580}
-  - component: {fileID: 114721622472817004}
   - component: {fileID: 114981221824511400}
   - component: {fileID: 114254337054901078}
   - component: {fileID: 114989254256047960}
+  - component: {fileID: 114561286724000306}
   - component: {fileID: 114034764853065064}
   m_Layer: 0
   m_Name: FPSController
@@ -357,13 +357,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 0
+  MaxGameComplete: 0
+  EmilyGameComplete: 0
+  LukeGameComplete: 0
+  NicoleGameComplete: 0
   MaxGlass: {fileID: 0}
   EmilyGlass: {fileID: 0}
   LukeGlass: {fileID: 0}
   NicoleGlass: {fileID: 0}
   Door: {fileID: 0}
   Timer: {fileID: 0}
-  TimeRemaining: 600
 --- !u!114 &114254337054901078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -375,17 +378,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2a0a62a2b9363419f778ea606a4a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114721622472817004
+--- !u!114 &114561286724000306
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4744dba374cee8346b388e8a82061171, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c688074afaaa4bf2880c69b28945a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lm: {fileID: 0}
 --- !u!114 &114922921447881580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,3 +423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e4d007f88d3b145a31fd6ea991d571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patternToPlay: []
+  playButton: {fileID: 0}
+  notes: 640061006200
+  ap: 0
+  emWinCondition: 0
