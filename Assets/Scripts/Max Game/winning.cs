@@ -18,9 +18,11 @@ public class winning : MonoBehaviour {
 
 	void OnTriggerEnter(Collider coll)
 	{
+		
 		if(coll.CompareTag("player"))
 		{
 			//THIS IS THE WIN CONDITION!!!
+			print ("fsdfsdfsd");
 			man.win = true;
 		}
 	}

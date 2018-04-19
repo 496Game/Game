@@ -58,7 +58,7 @@ public class manager : MonoBehaviour {
 			yield break;
 		yield return new WaitForSeconds(1);
 		enemy3.structureMove();
-		//character.StopCoroutine ("PlayerMove");
+		character.triggered = false;
 
 	}
 

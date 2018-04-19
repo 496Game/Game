@@ -5,76 +5,60 @@ using UnityEngine;
 public class charMove : movement {
 
 	public bool left;
-	public bool right;
+	public bool right = false;
 	public bool up;
 	public bool down;
 
-	bool triggered = false;
+	public bool triggered = false;
 	// Use this for initialization
 	void Start () {
 		SetUp();
-		StartCoroutine ("Right");
+		//StartCoroutine ("Right");
 	}
 
 	// Update is called once per frame
 	void Update () {
 
 		Raycasting ();
-		if (left)
-		{
-			if (!onNegZ) {
+		if (triggered == false) {
+			
+			if (!onNegZ && left && Input.GetMouseButtonUp (0)) {
 				moveLeft ();
+				triggered = true;
 				man.StartCoroutine ("MoveOrder");
-			} else {
-			}
-
-			left = false;
-
-		}
-
-
-		if (up)
-		{
-			if (!onNegX) {
-				moveUp ();
+				left = false;
+			} 
+			
+			if (!onZ && right && Input.GetMouseButtonUp (0)) {
+				moveRight ();
+				triggered = true;
 				man.StartCoroutine ("MoveOrder");
-			} else {
-			}
-
-
-		}
-
-		if (down)
-		{
-			if (!onX) {
-				moveDown ();
-				man.StartCoroutine ("MoveOrder");
-			} else {
-			}
-
-		}
-
-
-	}
-
-	IEnumerator Right()
-	{
-		while (!triggered) {
-			if (right) {
 				right = false;
-				if (!onZ) {
-					moveRight ();
-					man.StartCoroutine ("MoveOrder");
-					StartCoroutine ("Right");
+			}
+			
 
-				} else {
-				}
-				print ("run");
+			if (up) {
+				if (!onNegX && up && Input.GetMouseButtonUp (0)) {
+					moveUp ();
+					triggered = true;
+					man.StartCoroutine ("MoveOrder");
+					up = false;
+				} 
+
 
 			}
+
+			if (down) {
+				if (!onX && down && Input.GetMouseButtonUp (0)) {
+					moveDown ();
+					triggered = true;
+					man.StartCoroutine ("MoveOrder");
+					down = false;
+				} 
+
+			}
+
 		}
-		return null;
 	}
-
-
 }
+

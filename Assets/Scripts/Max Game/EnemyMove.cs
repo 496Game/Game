@@ -13,6 +13,7 @@ public class EnemyMove : movement {
 
 
 
+
 	//int layerMask = 1 << 8;
 
 	//sets gameobject rigid body to RB

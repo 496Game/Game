@@ -453,6 +453,10 @@ MonoBehaviour:
   board: {fileID: 1699135040}
   moveX: 0
   moveZ: 0
+  onX: 0
+  onNegX: 0
+  onZ: 0
+  onNegZ: 0
   moveArray: 02000000000000000000000000000000000000000000000000000000000000000000000000000000
   number: 0
 --- !u!23 &619657099
@@ -790,6 +794,10 @@ MonoBehaviour:
   board: {fileID: 1699135040}
   moveX: 0
   moveZ: 0
+  onX: 0
+  onNegX: 0
+  onZ: 0
+  onNegZ: 0
   moveArray: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   number: 0
 --- !u!23 &1044482111
@@ -977,6 +985,14 @@ MonoBehaviour:
   board: {fileID: 1699135040}
   moveX: 0
   moveZ: 0
+  onX: 0
+  onNegX: 0
+  onZ: 0
+  onNegZ: 0
+  left: 0
+  right: 0
+  up: 0
+  down: 0
 --- !u!54 &1310414508
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1006,6 +1022,10 @@ MonoBehaviour:
   board: {fileID: 1699135040}
   moveX: 0
   moveZ: 0
+  onX: 0
+  onNegX: 0
+  onZ: 0
+  onNegZ: 0
   moveArray: 02000000000000000000000000000000000000000000000000000000000000000000000000000000
   number: 0
 --- !u!23 &1310414510
@@ -1190,6 +1210,7 @@ MonoBehaviour:
   GO3: {fileID: 1044482108}
   player: {fileID: 0}
   reset: 0
+  win: 0
 --- !u!4 &1525252227
 Transform:
   m_ObjectHideFlags: 0
@@ -1265,6 +1286,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1617279409
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 15.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.6708312
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.6708312
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.22357443
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.22357443
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1670947795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,6 +1610,10 @@ MonoBehaviour:
   board: {fileID: 1699135040}
   moveX: 0
   moveZ: 0
+  onX: 0
+  onNegX: 0
+  onZ: 0
+  onNegZ: 0
   moveArray: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   number: 0
 --- !u!23 &1923888132

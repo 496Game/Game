@@ -28,6 +28,17 @@ public class MaxRaycast : MonoBehaviour {
 						move.right = true;
 					}
 
+					if (hit.transform.tag == "up") 
+					{
+						hit.transform.gameObject.GetComponent<Renderer>().material.color = Color.red;
+						move.up = true;
+					}
+
+					if (hit.transform.tag == "down") 
+					{
+						hit.transform.gameObject.GetComponent<Renderer>().material.color = Color.red;
+						move.down = true;
+					}
 				}
 			}
         }
