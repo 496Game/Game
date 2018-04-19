@@ -345,6 +345,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114989254256047960, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: playButton
+      value: 
+      objectReference: {fileID: 1521893736}
     - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 2}
       propertyPath: MaxGlass
@@ -637,6 +642,53 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b808813e022eb954d9462be96e4f653e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1521893736 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1388540030721924, guid: f5df47bf06d2fbc4089f4a6800305af9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1571656576}
+--- !u!1001 &1571656576
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4596561029600328, guid: f5df47bf06d2fbc4089f4a6800305af9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596561029600328, guid: f5df47bf06d2fbc4089f4a6800305af9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596561029600328, guid: f5df47bf06d2fbc4089f4a6800305af9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596561029600328, guid: f5df47bf06d2fbc4089f4a6800305af9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596561029600328, guid: f5df47bf06d2fbc4089f4a6800305af9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596561029600328, guid: f5df47bf06d2fbc4089f4a6800305af9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596561029600328, guid: f5df47bf06d2fbc4089f4a6800305af9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4596561029600328, guid: f5df47bf06d2fbc4089f4a6800305af9, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f5df47bf06d2fbc4089f4a6800305af9, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1573682549
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,10 +875,6 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2c4703a146a95924d8e98b6c544829f3, type: 2}
-    - target: {fileID: 1176326353568900, guid: 76ad905af8f0bcf47aaafad00506ca8b, type: 2}
-      propertyPath: m_Name
-      value: LukeGame
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76ad905af8f0bcf47aaafad00506ca8b, type: 2}
   m_IsPrefabParent: 0

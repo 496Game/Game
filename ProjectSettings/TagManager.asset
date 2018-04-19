@@ -3,24 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - EmilyGame
-  - NicoleGame
-  - LukeGame
-  - MaxGame
-<<<<<<< HEAD
-  - e
-  - c
-  - a
-  - b
-  - d
-  - tonePlayer
-=======
-  - Enemy
-  - player
-  - wall
-  - manager
->>>>>>> 0b0b32a806cb56c8c907efe8dc7540a0a284720e
+  tags: []
   layers:
   - Default
   - TransparentFX

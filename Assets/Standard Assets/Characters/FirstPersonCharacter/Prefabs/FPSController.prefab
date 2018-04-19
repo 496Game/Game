@@ -357,13 +357,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 0
+  MaxGameComplete: 0
+  EmilyGameComplete: 0
+  LukeGameComplete: 0
+  NicoleGameComplete: 0
   MaxGlass: {fileID: 0}
   EmilyGlass: {fileID: 0}
   LukeGlass: {fileID: 0}
   NicoleGlass: {fileID: 0}
   Door: {fileID: 0}
   Timer: {fileID: 0}
-  TimeRemaining: 600
 --- !u!114 &114254337054901078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,3 +422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e4d007f88d3b145a31fd6ea991d571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patternToPlay: []
+  playButton: {fileID: 0}
+  notes: 640061006200
+  ap: 0
+  emWinCondition: 0
