@@ -21,6 +21,8 @@ public class manager : MonoBehaviour {
 	charMove character;
 
 	public bool reset = false;
+
+	public bool win = false;
     // Use this for initialization
     void Start () {
         enemy1 = GO1.GetComponent<EnemyMove>();
@@ -56,7 +58,7 @@ public class manager : MonoBehaviour {
 			yield break;
         yield return new WaitForSeconds(1);
         enemy3.structureMove();
-		character.StopCoroutine ("PlayerMove");
+		//character.StopCoroutine ("PlayerMove");
 
     }
 

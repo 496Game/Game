@@ -53,44 +53,48 @@ public class movement : MonoBehaviour
     protected void Raycasting()
     {
 		RaycastHit hit;
-		onZ = Physics.Raycast(RB.transform.position, new Vector3(0, 0, 1),  out hit, moveZ)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
-		onNegZ = Physics.Raycast(RB.transform.position, new Vector3(0, 0, -1), out hit, moveZ)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
-		onX = Physics.Raycast(RB.transform.position, new Vector3(1, 0, 0),out hit, moveX)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
-		onNegX = Physics.Raycast(RB.transform.position, new Vector3(-1, 0, 0), out hit, moveX)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
+		onZ = Physics.Raycast(RB.transform.position, RB.transform.right,  out hit, moveZ)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
+		onNegZ = Physics.Raycast(RB.transform.position, (RB.transform.right*-1), out hit, moveZ)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
+		onX = Physics.Raycast(RB.transform.position, RB.transform.forward,out hit, moveX)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
+		onNegX = Physics.Raycast(RB.transform.position, (RB.transform.forward*-1), out hit, moveX)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
 
-		onZChar = Physics.Raycast(RB.transform.position, new Vector3(0, 0, 1), out hit, moveZ) && hit.transform.tag == "player";
-		onNegZChar = Physics.Raycast(RB.transform.position, new Vector3(0, 0, -1), out hit, moveZ)&& hit.transform.tag == "player";
-		onXChar = Physics.Raycast(RB.transform.position, new Vector3(1, 0, 0), out hit, moveX)&& hit.transform.tag == "player";
-		onNegXChar = Physics.Raycast(RB.transform.position, new Vector3(-1, 0, 0), out hit, moveX)&& hit.transform.tag == "player";
+		onZChar = Physics.Raycast(RB.transform.position, RB.transform.right, out hit, moveZ) && hit.transform.tag == "player";
+		onNegZChar = Physics.Raycast(RB.transform.position,(RB.transform.right*-1), out hit, moveZ)&& hit.transform.tag == "player";
+		onXChar = Physics.Raycast(RB.transform.position, RB.transform.forward, out hit, moveX)&& hit.transform.tag == "player";
+		onNegXChar = Physics.Raycast(RB.transform.position, (RB.transform.forward*-1), out hit, moveX)&& hit.transform.tag == "player";
 
-        Debug.DrawRay(RB.transform.position, new Vector3(0, 0, 1) * moveZ, Color.red);
+		Debug.DrawRay(RB.transform.position, RB.transform.right * moveZ, Color.red);
 
-        Debug.DrawRay(RB.transform.position, new Vector3(0, 0, -1) * moveZ, Color.red);
+		Debug.DrawRay(RB.transform.position,(RB.transform.right*-1) * moveZ, Color.red);
 
-        Debug.DrawRay(RB.transform.position, new Vector3(1,0,0) * moveX, Color.red);
+		Debug.DrawRay(RB.transform.position,  RB.transform.forward * moveX, Color.red);
 
-        Debug.DrawRay(RB.transform.position, new Vector3(-1, 0, 0) * moveX, Color.red);
+		Debug.DrawRay(RB.transform.position, (RB.transform.forward*-1) * moveX, Color.red);
     }
 
 
 
     protected void moveRight()
     {
-        RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, RB.transform.position.z + moveZ);
+		RB.transform.position += RB.transform.right;
+        //RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, RB.transform.position.z + moveZ);
     }
 
     protected void moveLeft()
     {
-        RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, RB.transform.position.z - moveZ);
+		RB.transform.position += (RB.transform.right*-1);
+       // RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, RB.transform.position.z - moveZ);
     }
 
     protected void moveUp()
     {
-        RB.transform.position = new Vector3(RB.transform.position.x - moveX, RB.transform.position.y, RB.transform.position.z);
+		RB.transform.position += RB.transform.forward;
+        //RB.transform.position = new Vector3(RB.transform.position.x - moveX, RB.transform.position.y, RB.transform.position.z);
     }
 
     protected void moveDown()
     {
-        RB.transform.position = new Vector3(RB.transform.position.x + moveX, RB.transform.position.y, RB.transform.position.z);
+		RB.transform.position += (RB.transform.forward*-1);
+       // RB.transform.position = new Vector3(RB.transform.position.x + moveX, RB.transform.position.y, RB.transform.position.z);
     }
 }

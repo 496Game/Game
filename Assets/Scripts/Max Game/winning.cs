@@ -20,7 +20,8 @@ public class winning : MonoBehaviour {
 	{
 		if(coll.CompareTag("player"))
 		{
-			
+			//THIS IS THE WIN CONDITION!!!
+			man.win = true;
 		}
 	}
 }
