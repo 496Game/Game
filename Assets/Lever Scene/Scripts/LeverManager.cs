@@ -49,9 +49,6 @@ public class LeverManager : MonoBehaviour {
 
 		// loop through all of the lights to see if the level is complete
 		success = Kuzco();
-		if (success) {
-			EmperorsNewGroove ();
-		}
 		Player.GetComponent<GameControl>().NicoleGameComplete = success;
 	}
 
@@ -75,20 +72,5 @@ public class LeverManager : MonoBehaviour {
 		}
 
 		return true;
-	}
-
-	// Method:      EmperorsNewGroove
-	// Parameter:   none
-	// Return:      None
-	// Description: Upon completion of the puzzle, this method
-	//              will call the animator of all lights and 
-	//              switch their color.
-	void EmperorsNewGroove() {
-		for (int i = 0; i < lights.Length; i++) {
-			anim = lights [i].GetComponent<Animator> ();
-
-			anim.SetBool ("success", true);
-		}
-		anim.SetBool ("success", false);
 	}
 }
