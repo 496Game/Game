@@ -3,6 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class GM : MonoBehaviour {
+<<<<<<< HEAD
+=======
+	public GameObject Player;
+>>>>>>> master
 
 	public bool GAMEOVER = false;
 	public int lives = 3;
@@ -44,6 +48,10 @@ public class GM : MonoBehaviour {
 			Time.timeScale = .25f;
 			Invoke ("Reset", resetDelay);
 			GAMEOVER = true;
+<<<<<<< HEAD
+=======
+			Player.GetComponent<GameControl>().LukeGameComplete = true;
+>>>>>>> master
 		}
 
 		if (lives < 1)
