@@ -5,7 +5,7 @@ using UnityEngine;
 public class EmilyRaycast : MonoBehaviour {
 	public AudioSource[] patternToPlay;
 	public GameObject playButton;
-	public char[] notes = new char[] {'d','a','b','e','e','a'} ;
+	public char[] notes = new char[] {'d','a','b'} ;
 	public int ap = 0 ; // array pointer
 	public bool emWinCondition = false ; // the varable checks if you have won or not
 
@@ -58,7 +58,12 @@ public class EmilyRaycast : MonoBehaviour {
 
 
 	void PlayNotes() {
-		// for the length of notes
+			StartCoroutine ("theIEnumerator");
+	} // end PlayNotes()
+
+	IEnumerator theIEnumerator () {
+		print ("You are doing the coroutine");
+
 		char theNote ;
 
 		for (int i = 0; i < notes.Length; i++) {
@@ -93,17 +98,11 @@ public class EmilyRaycast : MonoBehaviour {
 
 			default:
 				continue;
-				
+
 
 			} // end switch case
-			StartCoroutine ("theIEnumerator");
+			yield return new WaitForSeconds(1) ;
 		} // end for
 
-
-	} // end PlayNotes()
-
-	IEnumerator theIEnumerator () {
-		print ("You are doing the coroutine");
-		yield return new WaitForSeconds(2) ;
 	}
 }
