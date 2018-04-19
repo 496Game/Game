@@ -14,11 +14,7 @@ public class charMove : movement {
 	// Update is called once per frame
 	void Update () {
         
-		print("onX" + ": " + onX);
-		print("onNegX" + ": " + onNegX);
-		print("onZ" +  ": " + onZ);
-		print("onNegZ" +  ": " + onNegZ);
-		/*if (Input.GetKeyDown(KeyCode.A))
+		if (Input.GetKeyDown(KeyCode.A))
 		{
 			moveLeft();
 			man.StartCoroutine("MoveOrder");
@@ -43,7 +39,7 @@ public class charMove : movement {
 		{
 			moveDown();
 			man.StartCoroutine("MoveOrder");
-		}*/
+		}
 
 
     }
