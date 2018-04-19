@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EmilyRaycast : MonoBehaviour {
-
 	public AudioSource[] patternToPlay;
 	public GameObject playButton;
 	public char[] notes = new char[] {'d','a','b','e','e','a'} ;
@@ -26,29 +25,32 @@ public class EmilyRaycast : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit)) {
                 if (hit.rigidbody != null) {
-					hit.transform.gameObject.GetComponent<AudioSource>().Play();
+					if (hit.transform.gameObject.layer != 8) {
+						hit.transform.gameObject.GetComponent<AudioSource>().Play();
 
-					// save the tag and compare it to the apropriete location in the notes array
-					string currentNote = hit.transform.gameObject.tag ;
+						// save the tag and compare it to the apropriete location in the notes array
+						string currentNote = hit.transform.gameObject.tag ;
 
-					if (currentNote == "a" || currentNote == "b" || currentNote == "c" || currentNote == "d" || currentNote == "e") {
-						if (notes [ap].ToString () == currentNote) {
-							print ("Correct");
-							ap += 1;
-							if (ap == notes.Length) {
-								emWinCondition = true;
-								PlayNotes ();
-							}
-						} else {
-							print ("Bad");
-							ap = 0;
-						} // end if else
-					} else if (currentNote == "tonePlayer") {
-						print ("Going to play notes");
-						PlayNotes ();
+						if (currentNote == "a" || currentNote == "b" || currentNote == "c" || currentNote == "d" || currentNote == "e") {
+							if (notes [ap].ToString () == currentNote) {
+								print ("Correct");
+								ap += 1;
+								if (ap == notes.Length) {
+									emWinCondition = true;
+									GetComponent<GameControl>().EmilyGameComplete = true;
+									PlayNotes ();
+								}
+							} else {
+								print ("Bad");
+								ap = 0;
+							} // end if else
+						} else if (currentNote == "tonePlayer") {
+							print ("Going to play notes");
+							PlayNotes ();
 
-					}// end if else
-				} // end if
+						}// end if else
+					} // end if
+				}
 			} // end if
         } // end if
 

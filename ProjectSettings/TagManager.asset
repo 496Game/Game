@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - lever
+  - EmilyGame
+  - NicoleGame
+  - LukeGame
+  - MaxGame
+  - e
+  - c
+  - tonePlayer
+  - b
+  - d
+  - a
   layers:
   - Default
   - TransparentFX
@@ -13,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - GameButtons
   - 
   - 
   - 
