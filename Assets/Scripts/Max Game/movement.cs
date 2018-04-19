@@ -82,7 +82,7 @@ public class movement : MonoBehaviour
 
 	public void moveLeft()
 	{
-		RB.transform.position += (RB.transform.forward*-1);
+		RB.transform.position += (RB.transform.forward * -1);
 		// RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, RB.transform.position.z - moveZ);
 	}
 

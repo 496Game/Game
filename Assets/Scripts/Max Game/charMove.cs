@@ -9,15 +9,45 @@ public class charMove : movement {
 	public bool up;
 	public bool down;
 
+	public Renderer leftButton;
+	public Renderer rightButton;
+	public Renderer upButton;
+	public Renderer downButton;
+
 	public bool triggered = false;
 	// Use this for initialization
 	void Start () {
 		SetUp();
 		//StartCoroutine ("Right");
+
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		if (!onNegZ) {
+			leftButton.material.color = Color.green;
+		} else {
+			leftButton.GetComponent<Renderer>().material.color = Color.red;
+		}
+
+		if (!onZ) {
+			rightButton.material.color = Color.green;
+		} else {
+			rightButton.GetComponent<Renderer>().material.color = Color.red;
+		}
+
+		if (!onNegX) {
+			upButton.material.color = Color.green;
+		} else {
+			upButton.GetComponent<Renderer>().material.color = Color.red;
+		}
+
+		if (!onX) {
+			downButton.material.color = Color.green;
+		} else {
+			downButton.GetComponent<Renderer>().material.color = Color.red;
+		}
 
 		Raycasting ();
 		if (triggered == false) {
@@ -37,7 +67,7 @@ public class charMove : movement {
 			}
 			
 
-			if (up) {
+
 				if (!onNegX && up && Input.GetMouseButtonUp (0)) {
 					moveUp ();
 					triggered = true;
@@ -45,18 +75,12 @@ public class charMove : movement {
 					up = false;
 				} 
 
-
-			}
-
-			if (down) {
 				if (!onX && down && Input.GetMouseButtonUp (0)) {
 					moveDown ();
 					triggered = true;
 					man.StartCoroutine ("MoveOrder");
 					down = false;
 				} 
-
-			}
 
 		}
 	}

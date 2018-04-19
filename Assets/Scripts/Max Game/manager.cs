@@ -18,6 +18,8 @@ public class manager : MonoBehaviour {
 	protected Vector3 enemyStart3;
 	protected Vector3 playerStart;
 
+	public float timeWait = .2f;
+
 	charMove character;
 
 	public bool reset = false;
@@ -46,15 +48,15 @@ public class manager : MonoBehaviour {
 
 	IEnumerator MoveOrder()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(timeWait);
 		enemy1.structureMove();
 		if (reset)
 			yield break;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(timeWait);
 		enemy2.structureMove();
 		if (reset)
 			yield break;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(timeWait);
 		enemy3.structureMove();
 		character.triggered = false;
 
@@ -69,6 +71,7 @@ public class manager : MonoBehaviour {
 			GO2.transform.position = enemyStart2;
 			GO3.transform.position = enemyStart3;
 			player.transform.position = playerStart;
+			character.triggered = false;
 
 		}
 
