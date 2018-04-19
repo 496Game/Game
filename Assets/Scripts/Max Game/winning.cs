@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class winning : MonoBehaviour {
-
+	public GameObject Player;
 
 	manager man;
 	// Use this for initialization
@@ -24,6 +24,7 @@ public class winning : MonoBehaviour {
 			//THIS IS THE WIN CONDITION!!!
 			print ("fsdfsdfsd");
 			man.win = true;
+			Player.GetComponent<GameControl>().MaxGameComplete = true;
 		}
 	}
 }

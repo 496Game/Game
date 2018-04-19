@@ -35,8 +35,6 @@ public class manager : MonoBehaviour {
 		playerStart = player.transform.position;
 
 		character = GameObject.FindGameObjectWithTag ("player").GetComponent<charMove>();
-
-
 	}
 
 	// Update is called once per frame
