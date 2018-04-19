@@ -42,10 +42,7 @@ public class EnemyMove : movement {
         }*/
 
         Raycasting();
-        print("onX" + number +": " + onXChar);
-        print("onNegX" + number + ": " + onNegXChar);
-        print("onZ" + number + ": " + onZChar);
-        print("onNegZ" + number + ": " + onNegZChar);
+
         
     }
 

@@ -15,13 +15,13 @@ public class movement : MonoBehaviour
 
     protected Rigidbody RB;   //declares rigidbody
 
-    protected bool onX; //checks on x axis positive
+    public bool onX; //checks on x axis positive
 
-    protected bool onNegX;
+    public bool onNegX;
 
-    protected bool onZ; //checks on z axis
+    public bool onZ; //checks on z axis
 
-    protected bool onNegZ;
+    public bool onNegZ;
 
 	protected bool onXChar; //checks on x axis positive
 
@@ -50,7 +50,7 @@ public class movement : MonoBehaviour
 
     //raycast method that checks the four squares surrounding the piece
 
-    protected void Raycasting()
+    public void Raycasting()
     {
 		RaycastHit hit;
 		onZ = Physics.Raycast(RB.transform.position, RB.transform.right,  out hit, moveZ)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
@@ -74,25 +74,25 @@ public class movement : MonoBehaviour
 
 
 
-    protected void moveRight()
+    public void moveRight()
     {
 		RB.transform.position += RB.transform.right;
         //RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, RB.transform.position.z + moveZ);
     }
 
-    protected void moveLeft()
+    public void moveLeft()
     {
 		RB.transform.position += (RB.transform.right*-1);
        // RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, RB.transform.position.z - moveZ);
     }
 
-    protected void moveUp()
+    public void moveUp()
     {
 		RB.transform.position += RB.transform.forward;
         //RB.transform.position = new Vector3(RB.transform.position.x - moveX, RB.transform.position.y, RB.transform.position.z);
     }
 
-    protected void moveDown()
+    public void moveDown()
     {
 		RB.transform.position += (RB.transform.forward*-1);
        // RB.transform.position = new Vector3(RB.transform.position.x + moveX, RB.transform.position.y, RB.transform.position.z);
