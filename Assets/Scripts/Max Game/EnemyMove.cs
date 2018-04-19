@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class EnemyMove : movement {
 
-    [SerializeField]
-    private int[] moveArray = new int[10];
+	[SerializeField]
+	private int[] moveArray = new int[10];
 
-    public int number;
+	public int number;
 
-    protected int count = 0;
+	protected int count = 0;
 
 
 
-    //int layerMask = 1 << 8;
+	//int layerMask = 1 << 8;
 
-      //sets gameobject rigid body to RB
+	//sets gameobject rigid body to RB
 	// Use this for initialization
 	void Start () {
-        SetUp();
+		SetUp();
 
-        /*moveArray[0] = 1;
+		moveArray[0] = 1;
         moveArray[1] = 1;
         moveArray[2] = 0;
         moveArray[3] = 3;
@@ -29,41 +29,38 @@ public class EnemyMove : movement {
         moveArray[6] = 3;
         moveArray[7] = 0;
         moveArray[8] = 0;
-        moveArray[9] = 2;*/
-    }
-	
+        moveArray[9] = 2;
+	}
+
 	// Update is called once per frame
 	void Update () {
 
-       /* if(Input.GetKeyDown(KeyCode.Space))
+		/* if(Input.GetKeyDown(KeyCode.Space))
         {
             structureMove();
             
         }*/
 
-        Raycasting();
-        print("onX" + number +": " + onXChar);
-        print("onNegX" + number + ": " + onNegXChar);
-        print("onZ" + number + ": " + onZChar);
-        print("onNegZ" + number + ": " + onNegZChar);
-        
-    }
+		Raycasting();
+
+
+	}
 
 
 
-    public void structureMove()
-    {
-        int forever = 7 - count;
-        if (forever < 0)
-        {
-            forever = forever * -1;
-        }
-        bool blocked = false;
+	public void structureMove()
+	{
+		int forever = 7 - count;
+		if (forever < 0)
+		{
+			forever = forever * -1;
+		}
+		bool blocked = false;
 		bool reset = false;
 
 		if (onNegXChar) 
 		{
-			print ("dsfdsfasfdsaf");
+			
 			count = 3;
 			reset = true;
 
@@ -86,71 +83,72 @@ public class EnemyMove : movement {
 			count = 1;
 			reset = true;
 		}
-        switch(moveArray[count])
-        {
-            case 3:
-				
-                if(onNegZ)
-                {
-                    blocked = true;
-                }
-                    
-                else
-                    moveLeft();
-                moveArray[forever] = Random.Range(0, 4);
-                break;
+		switch(moveArray[count])
+		{
+		case 3:
 
-            case 2:
-                if (onX)
-                {
-                    blocked = true;
-                }
+			if(onNegZ)
+			{
+				blocked = true;
+				print ("skipped case 3");
+			}
 
-                else
-                    moveDown();
-                moveArray[forever] = Random.Range(0, 4);
-                break;
+			else
+				moveLeft();
+			moveArray[forever] = Random.Range(0, 4);
+			break;
 
-            case 1:
-                if (onZ)
-                {
-                    blocked = true;
-                }
+		case 2:
+			if (onX)
+			{
+				blocked = true;
+				print ("skipped case 2");
+			}
 
-                else
-                    moveRight();
-                moveArray[forever] = Random.Range(0, 4);
-                break;
+			else
+				moveDown();
+			moveArray[forever] = Random.Range(0, 4);
+			break;
 
-            case 0:
-                if (onNegX)
-                {
-                    blocked = true;
-                }
+		case 1:
+			if (onZ)
+			{
+				blocked = true;
+				print ("skipped case 1");
+			}
 
-                else
-                    moveUp();
-                moveArray[forever] = Random.Range(0,4);
-                break;
+			else
+				moveRight();
+			moveArray[forever] = Random.Range(0, 4);
+			break;
 
-            default:
-                Debug.Log("cant move");
-                break;
-        }
-        if (((count+ 1) % 10) == 0)
-            count = 0;
+		case 0:
+			if (onNegX) {
+				blocked = true;
+				print ("skipped case 0");
+			} else
+				moveUp();
+			moveArray[forever] = Random.Range(0,4);
+			break;
 
-        else
-            count++;
-        if(blocked)
-        {
-            structureMove();
-        }
+		default:
+			Debug.Log("cant move");
+			break;
+		}
+		if (((count+ 1) % 10) == 0)
+			count = 0;
+
+		else
+			count++;
+		if(blocked)
+		{
+			structureMove();
+		}
 		if (reset) 
 		{
 			man.reset = true;
 		}
-        
-    }
+
+	}
 
 }

@@ -4,54 +4,75 @@ using UnityEngine;
 
 public class charMove : movement {
 
+	public bool left;
+	public bool right;
+	public bool up;
+	public bool down;
 
+	bool triggered = false;
 	// Use this for initialization
 	void Start () {
-        SetUp();
+		SetUp();
+		StartCoroutine ("Right");
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-        
+
+		Raycasting ();
+		if (left)
+		{
+			if (!onNegZ) {
+				moveLeft ();
+				man.StartCoroutine ("MoveOrder");
+			} else {
+			}
+
+			left = false;
+
+		}
 
 
+		if (up)
+		{
+			if (!onNegX) {
+				moveUp ();
+				man.StartCoroutine ("MoveOrder");
+			} else {
+			}
 
-    }
 
-	IEnumerator PlayerMove()
+		}
+
+		if (down)
+		{
+			if (!onX) {
+				moveDown ();
+				man.StartCoroutine ("MoveOrder");
+			} else {
+			}
+
+		}
+
+
+	}
+
+	IEnumerator Right()
 	{
-		
-		bool moved = false;
-		if (Input.GetKeyDown(KeyCode.A))
-		{
-			moveLeft();
-			moved = true;
+		while (!triggered) {
+			if (right) {
+				right = false;
+				if (!onZ) {
+					moveRight ();
+					man.StartCoroutine ("MoveOrder");
+					StartCoroutine ("Right");
 
-		}
-		if (Input.GetKeyDown(KeyCode.D))
-		{
-			moveRight();
-			moved = true;
-		}
+				} else {
+				}
+				print ("run");
 
-		if (Input.GetKeyDown(KeyCode.W))
-		{
-			moveUp();
-			moved = true;
+			}
 		}
-
-		if (Input.GetKeyDown(KeyCode.S))
-		{
-			moveDown();
-			moved = true;
-		}
-
-		if (moved) 
-		{
-			man.StartCoroutine("MoveOrder");
-		}
-			
-
 		return null;
 	}
 

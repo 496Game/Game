@@ -10,17 +10,18 @@ public class winning : MonoBehaviour {
 	void Start () {
 		man = GameObject.FindGameObjectWithTag ("manager").GetComponent<manager>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	void OnTriggerEnter(Collider coll)
 	{
 		if(coll.CompareTag("player"))
 		{
-			
+			//THIS IS THE WIN CONDITION!!!
+			man.win = true;
 		}
 	}
 }
