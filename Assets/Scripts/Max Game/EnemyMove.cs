@@ -11,12 +11,15 @@ public class EnemyMove : movement {
 
     protected int count = 0;
 
-    int layerMask = 1 << 8;
+
+
+    //int layerMask = 1 << 8;
 
       //sets gameobject rigid body to RB
 	// Use this for initialization
 	void Start () {
         SetUp();
+
         /*moveArray[0] = 1;
         moveArray[1] = 1;
         moveArray[2] = 0;
@@ -39,19 +42,15 @@ public class EnemyMove : movement {
         }*/
 
         Raycasting();
-        print("onX" + number +": " + onX);
-        print("onNegX" + number + ": " + onNegX);
-        print("onZ" + number + ": " + onZ);
-        print("onNegZ" + number + ": " + onNegZ);
-        print("Direction" + number + ": " + moveArray[count]);
-        print("count" + number + ": " + count);
+        print("onX" + number +": " + onXChar);
+        print("onNegX" + number + ": " + onNegXChar);
+        print("onZ" + number + ": " + onZChar);
+        print("onNegZ" + number + ": " + onNegZChar);
+        
     }
 
 
-    /*void EnemyRay() : base()
-    {
 
-    }*/
     public void structureMove()
     {
         int forever = 7 - count;
@@ -60,9 +59,37 @@ public class EnemyMove : movement {
             forever = forever * -1;
         }
         bool blocked = false;
+		bool reset = false;
+
+		if (onNegXChar) 
+		{
+			print ("dsfdsfasfdsaf");
+			count = 3;
+			reset = true;
+
+		}
+		if (onNegZChar) 
+		{
+			print ("dsfdsfasfdsaf");
+			count = 0;
+			reset = true;
+		}
+		if (onXChar) 
+		{
+			print ("dsfdsfasfdsaf");
+			count = 2;
+			reset = true;
+		}
+		if (onXChar) 
+		{
+			print ("dsfdsfasfdsaf");
+			count = 1;
+			reset = true;
+		}
         switch(moveArray[count])
         {
             case 3:
+				
                 if(onNegZ)
                 {
                     blocked = true;
@@ -119,6 +146,10 @@ public class EnemyMove : movement {
         {
             structureMove();
         }
+		if (reset) 
+		{
+			man.reset = true;
+		}
         
     }
 

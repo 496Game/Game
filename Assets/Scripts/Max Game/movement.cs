@@ -22,6 +22,16 @@ public class movement : MonoBehaviour
     protected bool onZ; //checks on z axis
 
     protected bool onNegZ;
+
+	protected bool onXChar; //checks on x axis positive
+
+	protected bool onNegXChar;
+
+	protected bool onZChar; //checks on z axis
+
+	protected bool onNegZChar;
+
+	protected manager man;
                                     // Use this for initialization
 
     void Start()
@@ -34,16 +44,24 @@ public class movement : MonoBehaviour
         moveX = (board.GetComponent<Collider>().bounds.size.x) / 8; //sets move length
         moveZ = (board.GetComponent<Collider>().bounds.size.z) / 8; //sets move width
         RB = gameObject.GetComponent<Rigidbody>();  //sets gameobject rigid body to RB 
+		man = GameObject.FindGameObjectWithTag ("manager").GetComponent<manager>();
+
     }
 
     //raycast method that checks the four squares surrounding the piece
 
     protected void Raycasting()
     {
-        onZ = Physics.Raycast(RB.transform.position, new Vector3(0, 0, 1), moveZ);
-        onNegZ = Physics.Raycast(RB.transform.position, new Vector3(0, 0, -1), moveZ);
-        onX = Physics.Raycast(RB.transform.position, new Vector3(1, 0, 0), moveX);
-        onNegX = Physics.Raycast(RB.transform.position, new Vector3(-1, 0, 0), moveX);
+		RaycastHit hit;
+		onZ = Physics.Raycast(RB.transform.position, new Vector3(0, 0, 1),  out hit, moveZ)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
+		onNegZ = Physics.Raycast(RB.transform.position, new Vector3(0, 0, -1), out hit, moveZ)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
+		onX = Physics.Raycast(RB.transform.position, new Vector3(1, 0, 0),out hit, moveX)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
+		onNegX = Physics.Raycast(RB.transform.position, new Vector3(-1, 0, 0), out hit, moveX)&& (hit.transform.tag == "wall" || hit.transform.tag == "Enemy");
+
+		onZChar = Physics.Raycast(RB.transform.position, new Vector3(0, 0, 1), out hit, moveZ) && hit.transform.tag == "player";
+		onNegZChar = Physics.Raycast(RB.transform.position, new Vector3(0, 0, -1), out hit, moveZ)&& hit.transform.tag == "player";
+		onXChar = Physics.Raycast(RB.transform.position, new Vector3(1, 0, 0), out hit, moveX)&& hit.transform.tag == "player";
+		onNegXChar = Physics.Raycast(RB.transform.position, new Vector3(-1, 0, 0), out hit, moveX)&& hit.transform.tag == "player";
 
         Debug.DrawRay(RB.transform.position, new Vector3(0, 0, 1) * moveZ, Color.red);
 
