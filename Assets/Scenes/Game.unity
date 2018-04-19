@@ -274,6 +274,16 @@ GameObject:
   m_PrefabParentObject: {fileID: 1928413225159016, guid: b808813e022eb954d9462be96e4f653e,
     type: 2}
   m_PrefabInternal: {fileID: 1147154252}
+--- !u!23 &662431134 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23241600170685336, guid: f1ff43c285b97fd4ea3726c167dcb490,
+    type: 2}
+  m_PrefabInternal: {fileID: 1488184243}
+--- !u!23 &735085540 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23954797453340666, guid: f1ff43c285b97fd4ea3726c167dcb490,
+    type: 2}
+  m_PrefabInternal: {fileID: 1488184243}
 --- !u!1 &914586765
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +383,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1844
+  m_Name: pb_Mesh-23244
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -701,6 +711,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1301379935}
+--- !u!23 &1353210450 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23088544279286508, guid: f1ff43c285b97fd4ea3726c167dcb490,
+    type: 2}
+  m_PrefabInternal: {fileID: 1488184243}
 --- !u!1001 &1488184243
 Prefab:
   m_ObjectHideFlags: 0
@@ -714,7 +729,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 8.6
+      value: 8.38
       objectReference: {fileID: 0}
     - target: {fileID: 4259633478004100, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
       propertyPath: m_LocalPosition.z
@@ -745,6 +760,26 @@ Prefab:
       propertyPath: Player
       value: 
       objectReference: {fileID: 287024196}
+    - target: {fileID: 114883178376840714, guid: f1ff43c285b97fd4ea3726c167dcb490,
+        type: 2}
+      propertyPath: leftButton
+      value: 
+      objectReference: {fileID: 1939297737}
+    - target: {fileID: 114883178376840714, guid: f1ff43c285b97fd4ea3726c167dcb490,
+        type: 2}
+      propertyPath: rightButton
+      value: 
+      objectReference: {fileID: 735085540}
+    - target: {fileID: 114883178376840714, guid: f1ff43c285b97fd4ea3726c167dcb490,
+        type: 2}
+      propertyPath: upButton
+      value: 
+      objectReference: {fileID: 662431134}
+    - target: {fileID: 114883178376840714, guid: f1ff43c285b97fd4ea3726c167dcb490,
+        type: 2}
+      propertyPath: downButton
+      value: 
+      objectReference: {fileID: 1353210450}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
   m_IsPrefabParent: 0
@@ -996,6 +1031,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1817820647}
+--- !u!23 &1939297737 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 23428005249514832, guid: f1ff43c285b97fd4ea3726c167dcb490,
+    type: 2}
+  m_PrefabInternal: {fileID: 1488184243}
 --- !u!1001 &1993325822
 Prefab:
   m_ObjectHideFlags: 0
