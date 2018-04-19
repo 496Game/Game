@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using UnityEngine.Playables;
 
 public class GameControl : MonoBehaviour {
 	public enum GameState {Start, Max, Emily, Luke, Nicole, Win, Lose};
 	public GameState CurrentState;
+
+	public GameObject Timeline;
+	public GameObject TimelineCamera;
 
 	public bool MaxGameComplete    = false;
 	public bool EmilyGameComplete  = false;
@@ -85,7 +89,9 @@ public class GameControl : MonoBehaviour {
 				NicoleGlass.GetComponent<Animator>().SetTrigger("GlassUp");
 				PreviousGame = NicoleGlass;
 				break;
-			case GameState.Win:
+		case GameState.Win:
+			TimelineCamera.SetActive (true);
+			Timeline.GetComponent<PlayableDirector> ().Play ();
 				Door.GetComponent<Animator>().SetTrigger("DoorOpen");
 				Door.GetComponent<Collider>().enabled = true;
 				StopCoroutine("GameTimer");
