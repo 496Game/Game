@@ -65,7 +65,7 @@ public class GM : MonoBehaviour {
 	{
 		lives--;
 		livesText.text = "Lives: " + lives;
-		Instantiate(deathParticles, clonePaddle.transform.position, Quaternion.identity);
+		//Instantiate(deathParticles, clonePaddle.transform.position, Quaternion.identity);
 		Destroy(clonePaddle);
 		Invoke ("SetupPaddle", resetDelay);
 		CheckGameOver();
