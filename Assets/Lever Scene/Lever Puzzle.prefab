@@ -2822,9 +2822,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lights:
   - {fileID: 1606773678973878}
-  - {fileID: 1057898307040972}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &114468762066014106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2837,10 +2834,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lights:
-  - {fileID: 1057898307040972}
-  - {fileID: 1346273690419888}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1214606146352584}
+  - {fileID: 1378914422014428}
+  - {fileID: 1606773678973878}
 --- !u!114 &114473900719028758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2853,10 +2849,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lights:
-  - {fileID: 1378914422014428}
   - {fileID: 1346273690419888}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1057898307040972}
 --- !u!114 &114475963386033550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2869,10 +2863,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lights:
+  - {fileID: 1378914422014428}
   - {fileID: 1346273690419888}
-  - {fileID: 1214606146352584}
-  - {fileID: 1937442032650030}
-  - {fileID: 1606773678973878}
 --- !u!114 &114806276807238332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2886,9 +2878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lights:
   - {fileID: 1214606146352584}
-  - {fileID: 1214784599529636}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1937442032650030}
 --- !u!114 &114874654082761804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2902,7 +2892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lights:
   - {fileID: 1214606146352584}
-  - {fileID: 1378914422014428}
+  - {fileID: 1057898307040972}
 --- !u!114 &114980700416732464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2915,10 +2905,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lights:
-  - {fileID: 1346273690419888}
-  - {fileID: 1937442032650030}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1214606146352584}
+  - {fileID: 1378914422014428}
+  - {fileID: 1057898307040972}
+  - {fileID: 1214784599529636}
 --- !u!114 &114983914643221416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2931,10 +2921,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lights:
+  - {fileID: 1214606146352584}
   - {fileID: 1214784599529636}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!136 &136055251057376914
 CapsuleCollider:
   m_ObjectHideFlags: 1

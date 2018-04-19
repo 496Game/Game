@@ -882,16 +882,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114561286724000306, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: lm
-      value: 
-      objectReference: {fileID: 477042316}
-    - target: {fileID: 114989254256047960, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: playButton
-      value: 
-      objectReference: {fileID: 1521893736}
     - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 2}
       propertyPath: MaxGlass
@@ -922,6 +912,16 @@ Prefab:
       propertyPath: Timer
       value: 
       objectReference: {fileID: 538509726}
+    - target: {fileID: 114989254256047960, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: playButton
+      value: 
+      objectReference: {fileID: 1521893736}
+    - target: {fileID: 114561286724000306, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: lm
+      value: 
+      objectReference: {fileID: 477042316}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0

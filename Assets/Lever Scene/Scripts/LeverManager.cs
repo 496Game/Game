@@ -49,7 +49,7 @@ public class LeverManager : MonoBehaviour {
 
 		// loop through all of the lights to see if the level is complete
 		success = Kuzco();
-
+		Player.GetComponent<GameControl>().NicoleGameComplete = success;
 	}
 
 	// Method:      Kuzco

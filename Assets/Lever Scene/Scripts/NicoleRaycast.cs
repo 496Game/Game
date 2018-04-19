@@ -16,7 +16,7 @@ public class NicoleRaycast : MonoBehaviour {
 		time += Time.deltaTime;
 
 		// if mouse is clicked
-		if (Input.GetMouseButton(0)) {
+		if (Input.GetMouseButtonDown(0)) {
 			// variables hold object that hits raycast
             RaycastHit hit;		
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // ray cast off of mouse pos
