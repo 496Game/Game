@@ -15,8 +15,13 @@ public class GameControl : MonoBehaviour {
 
 	public bool MaxGameComplete    = false;
 	public bool EmilyGameComplete  = false;
-	public bool LukeGameComplete   = false;
+	public bool LukeGameComplete   = true;
 	public bool NicoleGameComplete = false;
+
+	public GameObject MaxButton;
+	public GameObject EmilyButton;
+	public GameObject LukeButton;
+	public GameObject NicoleButton;
 
 	public GameObject MaxGlass;
 	public GameObject EmilyGlass;
@@ -55,6 +60,22 @@ public class GameControl : MonoBehaviour {
 	}
 
 	public void CheckVictory() {
+		if (MaxGameComplete) {
+			MaxButton.GetComponent<Renderer>().material.color = Color.green;
+		}
+
+		if (EmilyGameComplete) {
+			EmilyButton.GetComponent<Renderer>().material.color = Color.green;
+		}
+
+		if (LukeGameComplete) {
+			LukeButton.GetComponent<Renderer>().material.color = Color.green;
+		}
+
+		if (NicoleGameComplete) {
+			NicoleButton.GetComponent<Renderer>().material.color = Color.green;
+		}
+
 		if (MaxGameComplete && EmilyGameComplete && LukeGameComplete && NicoleGameComplete) {
 			CurrentState = GameState.Win;
 			SwitchGames();
@@ -90,35 +111,43 @@ public class GameControl : MonoBehaviour {
 				PreviousGame = NicoleGlass;
 				break;
 		case GameState.Win:
-			TimelineCamera.SetActive (true);
-			Timeline.GetComponent<PlayableDirector> ().Play ();
-				Door.GetComponent<Animator>().SetTrigger("DoorOpen");
-				Door.GetComponent<Collider>().enabled = true;
-				StopCoroutine("GameTimer");
-				PlayerPrefs.SetFloat("LastWin", EndTime);
+			TimelineCamera.SetActive(true);
+			Timeline.GetComponent<PlayableDirector>().Play();
+			Door.GetComponent<Animator>().SetTrigger("DoorOpen");
+			Door.GetComponent<Collider>().enabled = true;
+			StopCoroutine("GameTimer");
+			PlayerPrefs.SetFloat("LastWin", EndTime);
 
-				var Scores = PlayerPrefs.GetString("scores", "0;0;0;0;0").Split(';').Select(s => float.Parse(s)).ToArray();
-                for (var ScoresIndex = 0; ScoresIndex < Scores.Length; ScoresIndex++) {
-                    if (EndTime > Scores[ScoresIndex]) {
-                        for (var ScoresShiftIndex = Scores.Length - 1; ScoresShiftIndex > ScoresIndex; ScoresShiftIndex--) {
-                            Scores[ScoresShiftIndex] = Scores[ScoresShiftIndex - 1];
-                        }
+			var Scores = PlayerPrefs.GetString("scores", "0;0;0;0;0").Split(';').Select(s => float.Parse(s)).ToArray();
+			for (var ScoresIndex = 0; ScoresIndex < Scores.Length; ScoresIndex++) {
+				if (EndTime > Scores[ScoresIndex]) {
+					for (var ScoresShiftIndex = Scores.Length - 1; ScoresShiftIndex > ScoresIndex; ScoresShiftIndex--) {
+						Scores[ScoresShiftIndex] = Scores[ScoresShiftIndex - 1];
+					}
 
-                        Scores[ScoresIndex] = EndTime;
+					Scores[ScoresIndex] = EndTime;
 
-                        break;
-                    }
-                }
+					break;
+				}
+			}
 
-				PlayerPrefs.SetString("scores", string.Join(";", Scores.Select(i => i.ToString()).ToArray()));
+			PlayerPrefs.SetString("scores", string.Join(";", Scores.Select(i => i.ToString()).ToArray()));
 
-				break;
+			break;
 			case GameState.Lose:
 				SceneManager.LoadScene("Loss");
 				break;
 			default:
 				GetComponent<MaxRaycast>().enabled = true;
 				break;
+		}
+	}
+
+	void Update() {
+		if (CurrentState == GameState.Win) {
+			if (Timeline.GetComponent<PlayableDirector>().state != PlayState.Playing) {
+				TimelineCamera.SetActive(false);				
+			}
 		}
 	}
 

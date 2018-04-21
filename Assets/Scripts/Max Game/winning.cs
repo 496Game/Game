@@ -25,6 +25,7 @@ public class winning : MonoBehaviour {
 			print ("fsdfsdfsd");
 			man.win = true;
 			Player.GetComponent<GameControl>().MaxGameComplete = true;
+			Player.GetComponent<GameControl>().CheckVictory();
 		}
 	}
 }

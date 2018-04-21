@@ -38,6 +38,7 @@ public class EmilyRaycast : MonoBehaviour {
 								if (ap == notes.Length) {
 									emWinCondition = true;
 									GetComponent<GameControl>().EmilyGameComplete = true;
+									GetComponent<GameControl>().CheckVictory();
 									PlayNotes ();
 								}
 							} else {
