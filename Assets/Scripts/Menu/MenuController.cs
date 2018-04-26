@@ -8,6 +8,8 @@ public class MenuController : MonoBehaviour {
 	public GameObject Options;
 	public GameObject Scoreboard;
 
+	public AudioSource ButtonClick;
+
 	public Text Score1;
 	public Text Score2;
 	public Text Score3;
@@ -23,25 +25,29 @@ public class MenuController : MonoBehaviour {
 
 	public void PlayGame() {
 		SceneManager.LoadScene("Game");
+		ButtonClick.Play ();
 	}
 
 	public void OptionsClick() {
 		Options.GetComponent<Animator>().SetTrigger("MenuIn");
+		ButtonClick.Play ();
 
 		if (Scoreboard.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("MenuIn")) {
-			Scoreboard.GetComponent<Animator>().SetTrigger("MenuOut");
+			Options.GetComponent<Animator>().SetTrigger("MenuOut");
 		}
 	}
 
 	public void ScoreboardClick() {
 		Scoreboard.GetComponent<Animator>().SetTrigger("MenuIn");
+		ButtonClick.Play ();
 
-		if (Options.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("MenuIn	")) {
-			Options.GetComponent<Animator>().SetTrigger("MenuOut");
+		if (Options.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("MenuIn")) {
+			Scoreboard.GetComponent<Animator>().SetTrigger("MenuOut");
 		}
 	}
 
 	public void Quit() {
+		ButtonClick.Play ();
 		Application.Quit();
 	}
 }
