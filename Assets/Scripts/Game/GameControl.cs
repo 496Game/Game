@@ -18,6 +18,11 @@ public class GameControl : MonoBehaviour {
 	public bool LukeGameComplete   = true;
 	public bool NicoleGameComplete = false;
 
+	public Text MaxStatus;
+	public Text EmilyStatus;
+	public Text LukeStatus;
+	public Text NicoleStatus;
+
 	public GameObject MaxButton;
 	public GameObject EmilyButton;
 	public GameObject LukeButton;
@@ -39,8 +44,6 @@ public class GameControl : MonoBehaviour {
 	void Start() {
 		CurrentState = GameState.Start;
 		StartCoroutine(GameTimer());
-		//CurrentState = GameState.Win;
-		//SwitchGames();
 	}
 
 	public void MaxGame() {
@@ -59,21 +62,58 @@ public class GameControl : MonoBehaviour {
 		CurrentState = GameState.Nicole;
 	}
 
+	public void CheckStatus(Text state, bool complete) {
+		if (complete) {
+			state.text = "Game Complete!";
+		} 
+		else {
+			state.text = "Needs to be done!";	
+		}
+	}
+
 	public void CheckVictory() {
 		if (MaxGameComplete) {
-			MaxButton.GetComponent<Renderer>().material.color = Color.green;
+			MaxButton.GetComponent<Renderer> ().material.color = Color.green;
+			MaxButton.GetComponent<Collider> ().enabled = false;
+			MaxStatus.text = "Game Completed!";
+			MaxStatus.color = Color.green;
+		} 
+		else {
+			MaxStatus.text = "Needs to be done!";
+			MaxStatus.color = Color.red;
 		}
 
 		if (EmilyGameComplete) {
 			EmilyButton.GetComponent<Renderer>().material.color = Color.green;
+			EmilyButton.GetComponent<Collider> ().enabled = false;
+			EmilyStatus.text = "Game Completed!";
+			EmilyStatus.color = Color.green;
+		} 
+		else {
+			EmilyStatus.text = "Needs to be done!";
+			EmilyStatus.color = Color.red;
 		}
 
 		if (LukeGameComplete) {
 			LukeButton.GetComponent<Renderer>().material.color = Color.green;
+			LukeButton.GetComponent<Collider> ().enabled = false;
+			LukeStatus.text = "Game Completed!";
+			LukeStatus.color = Color.green;
+		} 
+		else {
+			LukeStatus.text = "Needs to be done!";
+			LukeStatus.color = Color.red;
 		}
 
 		if (NicoleGameComplete) {
 			NicoleButton.GetComponent<Renderer>().material.color = Color.green;
+			NicoleButton.GetComponent<Collider> ().enabled = false;
+			NicoleStatus.text = "Game Completed!";
+			NicoleStatus.color = Color.green;
+		} 
+		else {
+			NicoleStatus.text = "Needs to be done!";
+			NicoleStatus.color = Color.red;
 		}
 
 		if (MaxGameComplete && EmilyGameComplete && LukeGameComplete && NicoleGameComplete) {
