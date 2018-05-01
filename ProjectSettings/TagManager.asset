@@ -23,6 +23,7 @@ TagManager:
   - right
   - up
   - down
+  - brick
   layers:
   - Default
   - TransparentFX

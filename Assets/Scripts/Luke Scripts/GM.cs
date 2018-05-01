@@ -50,15 +50,20 @@ public class GM : MonoBehaviour {
 		{
 			gameOver.SetActive(true);
 			Time.timeScale = .25f;
-			Invoke ("Reset", resetDelay);
+			Reset ();
+			//Invoke ("Reset", resetDelay);
 		}
 
 	}
 
 	void Reset()
 	{
+		Destroy(GameObject.FindGameObjectWithTag("brick"));
 		Time.timeScale = 1f;
-		//Application.LoadLevel(Application.loadedLevel);
+		Instantiate(bricksPrefab, new Vector3(-40.63718f, 5.977097f, -.871537f), Quaternion.identity);
+		lives = 3;
+		livesText.text = "Lives: " + lives;
+		gameOver.SetActive (false);
 	}
 
 	public void LoseLife()

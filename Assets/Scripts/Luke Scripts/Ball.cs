@@ -17,7 +17,7 @@ public class Ball : MonoBehaviour {
 
 	void Update () 
 	{
-		if (Input.GetKeyDown(KeyCode.L) && ballInPlay == false)
+		if (Input.GetKeyDown(KeyCode.K) && ballInPlay == false)
 		{
 			transform.parent = null;
 			ballInPlay = true;
