@@ -15,6 +15,14 @@ TagManager:
   - b
   - d
   - a
+  - Enemy
+  - wall
+  - player
+  - manager
+  - left
+  - right
+  - up
+  - down
   layers:
   - Default
   - TransparentFX

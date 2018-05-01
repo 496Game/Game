@@ -36,6 +36,7 @@ GameObject:
   - component: {fileID: 2000000}
   - component: {fileID: 8100000}
   - component: {fileID: 12474086}
+  - component: {fileID: 95016111339775650}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -345,6 +346,23 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}
   m_IsPrefabParent: 1
+--- !u!95 &95016111339775650
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114034764853065064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,10 +375,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: 0
+  Timeline: {fileID: 0}
+  TimelineCamera: {fileID: 0}
   MaxGameComplete: 0
   EmilyGameComplete: 0
-  LukeGameComplete: 0
+  LukeGameComplete: 1
   NicoleGameComplete: 0
+  MaxButton: {fileID: 0}
+  EmilyButton: {fileID: 0}
+  LukeButton: {fileID: 0}
+  NicoleButton: {fileID: 0}
   MaxGlass: {fileID: 0}
   EmilyGlass: {fileID: 0}
   LukeGlass: {fileID: 0}
@@ -384,7 +408,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c688074afaaa4bf2880c69b28945a65, type: 3}
   m_Name: 

@@ -50,6 +50,10 @@ public class LeverManager : MonoBehaviour {
 		// loop through all of the lights to see if the level is complete
 		success = Kuzco();
 		Player.GetComponent<GameControl>().NicoleGameComplete = success;
+		Player.GetComponent<GameControl>().CheckVictory();
+		if (success) {
+			EmperorsNewGroove ();
+		}
 	}
 
 	// Method:      Kuzco
@@ -72,5 +76,21 @@ public class LeverManager : MonoBehaviour {
 		}
 
 		return true;
+	}
+
+	// Method:      EmperorsNewGroove
+	// Parameter:   none
+	// Return:      none
+	// Description: When the puzzle has been completed, this will
+	//              loop through all of the lights and add on a 
+	//              animation effect, to signal that the player
+	//              has successfully completed the puzzle.
+	void EmperorsNewGroove() {
+		for (int i = 0; i < lights.Length; i++) {
+			// get reference to animator
+			anim = lights[i].GetComponent<Animator>();
+
+			anim.SetBool ("success", true);
+		}
 	}
 }
