@@ -33,7 +33,7 @@ public class GM : MonoBehaviour {
 	public void Setup()
 	{
 		clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
-		Instantiate(bricksPrefab, transform.position, Quaternion.identity);
+		//Instantiate(bricksPrefab, transform.position, Quaternion.identity);
 	}
 
 	void CheckGameOver()
@@ -58,7 +58,7 @@ public class GM : MonoBehaviour {
 	void Reset()
 	{
 		Time.timeScale = 1f;
-		Application.LoadLevel(Application.loadedLevel);
+		//Application.LoadLevel(Application.loadedLevel);
 	}
 
 	public void LoseLife()
