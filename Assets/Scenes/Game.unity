@@ -3399,6 +3399,10 @@ Prefab:
       propertyPath: downButton
       value: 
       objectReference: {fileID: 1353210450}
+    - target: {fileID: 1157681947545878, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
+      propertyPath: m_TagString
+      value: left
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ff43c285b97fd4ea3726c167dcb490, type: 2}
   m_IsPrefabParent: 0
