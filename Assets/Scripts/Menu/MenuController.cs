@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Linq;
 
 public class MenuController : MonoBehaviour {
 	public GameObject Options;
@@ -20,7 +21,13 @@ public class MenuController : MonoBehaviour {
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
 
-		Debug.Log(PlayerPrefs.GetString("scores"));
+		var Scores = PlayerPrefs.GetString("scores", "0;0;0;0;0").Split(';').Select(s => float.Parse(s)).ToArray();
+
+		Score1.text = "Time Remaining: " + Scores[0].ToString();
+		Score2.text = "Time Remaining: " + Scores[1].ToString();
+		Score3.text = "Time Remaining: " + Scores[2].ToString();
+		Score4.text = "Time Remaining: " + Scores[3].ToString();
+		Score5.text = "Time Remaining: " + Scores[4].ToString();
 	}
 
 	public void PlayGame() {
@@ -33,7 +40,7 @@ public class MenuController : MonoBehaviour {
 		ButtonClick.Play ();
 
 		if (Scoreboard.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("MenuIn")) {
-			Options.GetComponent<Animator>().SetTrigger("MenuOut");
+			Scoreboard.GetComponent<Animator>().SetTrigger("MenuOut");
 		}
 	}
 
@@ -42,7 +49,7 @@ public class MenuController : MonoBehaviour {
 		ButtonClick.Play ();
 
 		if (Options.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("MenuIn")) {
-			Scoreboard.GetComponent<Animator>().SetTrigger("MenuOut");
+			Options.GetComponent<Animator>().SetTrigger("MenuOut");
 		}
 	}
 
