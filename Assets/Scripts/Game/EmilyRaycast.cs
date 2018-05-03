@@ -151,26 +151,31 @@ public class EmilyRaycast : MonoBehaviour {
 				case 'a':
 					patternToPlay [0].Play ();
 					print ("a");
+					playButton.GetComponent<Renderer> ().material.color = Color.red;
 					break;
 
 				case 'b':
 					patternToPlay [1].Play ();
 					Debug.Log ("b");
+					playButton.GetComponent<Renderer> ().material.color = Color.yellow;
 					break;
 
 				case 'c':
 					patternToPlay [2].Play ();
 					Debug.Log ("c");
+					playButton.GetComponent<Renderer> ().material.color = Color.green;
 					break;
 
 				case 'd':
 					patternToPlay [3].Play ();
 					Debug.Log ("d");
+					playButton.GetComponent<Renderer> ().material.color = Color.blue;
 					break;
 
 				case 'e':
 					patternToPlay [4].Play ();
 					Debug.Log ("e");
+					playButton.GetComponent<Renderer> ().material.color = Color.magenta;
 					break;
 
 				default:
@@ -190,26 +195,31 @@ public class EmilyRaycast : MonoBehaviour {
 				case 'a':
 					patternToPlay [0].Play ();
 					print ("a");
+					playButton.GetComponent<Renderer> ().material.color = Color.red;
 					break;
 
 				case 'b':
 					patternToPlay [1].Play ();
 					Debug.Log ("b");
+					playButton.GetComponent<Renderer> ().material.color = Color.yellow;
 					break;
 
 				case 'c':
 					patternToPlay [2].Play ();
 					Debug.Log ("c");
+					playButton.GetComponent<Renderer> ().material.color = Color.green;
 					break;
 
 				case 'd':
 					patternToPlay [3].Play ();
 					Debug.Log ("d");
+					playButton.GetComponent<Renderer> ().material.color = Color.blue;
 					break;
 
 				case 'e':
 					patternToPlay [4].Play ();
 					Debug.Log ("e");
+					playButton.GetComponent<Renderer> ().material.color = Color.magenta;
 					break;
 
 				default:
@@ -230,26 +240,31 @@ public class EmilyRaycast : MonoBehaviour {
 				case 'a':
 					patternToPlay [0].Play ();
 					print ("a");
+					playButton.GetComponent<Renderer> ().material.color = Color.red;
 					break;
 
 				case 'b':
 					patternToPlay [1].Play ();
 					Debug.Log ("b");
+					playButton.GetComponent<Renderer> ().material.color = Color.yellow;
 					break;
 
 				case 'c':
 					patternToPlay [2].Play ();
 					Debug.Log ("c");
+					playButton.GetComponent<Renderer> ().material.color = Color.green;
 					break;
 
 				case 'd':
 					patternToPlay [3].Play ();
 					Debug.Log ("d");
+					playButton.GetComponent<Renderer> ().material.color = Color.blue;
 					break;
 
 				case 'e':
 					patternToPlay [4].Play ();
 					Debug.Log ("e");
+					playButton.GetComponent<Renderer> ().material.color = Color.magenta;
 					break;
 
 				default:
@@ -262,5 +277,6 @@ public class EmilyRaycast : MonoBehaviour {
 		} else {
 			
 		} // end if else
+		playButton.GetComponent<Renderer> ().material.color = Color.white;
 	} // end theIEnumerator
 }
