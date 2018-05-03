@@ -11,6 +11,7 @@ public class EmilyRaycast : MonoBehaviour {
 	public char[] notesThr = new char[] {'b','d','d','a','c','e','b'} ;
 
 	public int ap = 0 ; // array pointer
+	public bool isPlaying = false ; // this variable is going to check if the play button is playing
 
 	//bools to test the win state
 	public int gameNumber = 1 ;
@@ -31,7 +32,7 @@ public class EmilyRaycast : MonoBehaviour {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit)) {
+			if (Physics.Raycast(ray, out hit) && !isPlaying) {
                 if (hit.rigidbody != null) {
 					if (hit.transform.gameObject.layer != 8) {
 
@@ -135,7 +136,7 @@ public class EmilyRaycast : MonoBehaviour {
 
 	IEnumerator theIEnumerator () {
 		print ("You are doing the coroutine");
-
+		isPlaying = true;
 		char theNote ;
 
 		yield return new WaitForSeconds(1) ;
@@ -278,5 +279,6 @@ public class EmilyRaycast : MonoBehaviour {
 			
 		} // end if else
 		playButton.GetComponent<Renderer> ().material.color = Color.white;
+		isPlaying = false;
 	} // end theIEnumerator
 }
