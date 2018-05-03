@@ -57,4 +57,13 @@ public class MenuController : MonoBehaviour {
 		ButtonClick.Play ();
 		Application.Quit();
 	}
+
+	public void ChangeMusic() {
+		if (PlayerPrefs.GetInt ("music", 0) == 1) {
+			PlayerPrefs.SetInt ("music", 0);
+		} 
+		else {
+			PlayerPrefs.SetInt ("music", 1);
+		}
+	}
 }
