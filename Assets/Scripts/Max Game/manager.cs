@@ -52,12 +52,12 @@ public class manager : MonoBehaviour {
 		enemy1.structureMove();
 		if (reset)
 			yield break;
-		yield return new WaitForSeconds(timeWait);
+		/*yield return new WaitForSeconds(timeWait);
 		enemy2.structureMove();
 		if (reset)
 			yield break;
 		yield return new WaitForSeconds(timeWait);
-		enemy3.structureMove();
+		enemy3.structureMove();*/
 		character.triggered = false;
 
 	}
@@ -68,8 +68,8 @@ public class manager : MonoBehaviour {
 		{
 			reset = false;
 			GO1.transform.position = enemyStart1;
-			GO2.transform.position = enemyStart2;
-			GO3.transform.position = enemyStart3;
+			/*GO2.transform.position = enemyStart2;
+			GO3.transform.position = enemyStart3;*/
 			player.transform.position = playerStart;
 			character.triggered = false;
 

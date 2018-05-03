@@ -11,6 +11,11 @@ public class EnemyMove : movement {
 
 	protected int count = 0;
 
+	public Transform charPos;
+
+	float moveDirX;
+	float moveDirZ;
+
 
 
 
@@ -51,6 +56,46 @@ public class EnemyMove : movement {
 
 	public void structureMove()
 	{
+		charPos = GameObject.FindGameObjectWithTag ("player").GetComponent<Transform>();
+
+		if (gameObject.transform.position.x < charPos.position.x)
+			moveDirX = charPos.position.x - gameObject.transform.position.x;
+		else
+			moveDirX = gameObject.transform.position.x + charPos.position.x;
+
+		if (gameObject.transform.position.z < charPos.position.z)
+			moveDirZ = charPos.position.z - gameObject.transform.position.z;
+		else
+			moveDirZ = gameObject.transform.position.z + charPos.position.z;
+
+		if (moveDirX > gameObject.transform.position.x) 
+		{
+			print ("Left");
+			print(gameObject.transform.position.x);
+			print(charPos.position.x);
+		}
+
+		if (moveDirZ > gameObject.transform.position.z) 
+		{
+			print ("Down");
+			print(gameObject.transform.position.z);
+			print(charPos.position.z);
+		}
+
+		if (moveDirX < gameObject.transform.position.x) 
+		{
+			print ("Right");
+			print(gameObject.transform.position.x);
+			print(charPos.position.x);
+		}
+
+		if (moveDirZ < gameObject.transform.position.z) 
+		{
+			print ("Up");
+			print(gameObject.transform.position.z);
+			print(charPos.position.z);
+		}
+
 		int forever = 7 - count;
 		if (forever < 0)
 		{
@@ -68,19 +113,16 @@ public class EnemyMove : movement {
 		}
 		if (onNegZChar) 
 		{
-			print ("dsfdsfasfdsaf");
 			count = 0;
 			reset = true;
 		}
 		if (onXChar) 
 		{
-			print ("dsfdsfasfdsaf");
 			count = 2;
 			reset = true;
 		}
 		if (onXChar) 
 		{
-			print ("dsfdsfasfdsaf");
 			count = 1;
 			reset = true;
 		}

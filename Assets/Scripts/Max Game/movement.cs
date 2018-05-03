@@ -32,12 +32,13 @@ public class movement : MonoBehaviour
 	protected bool onNegZChar;
 
 	protected manager man;
+
+
+
+
 	// Use this for initialization
 
-	void Start()
-	{
 
-	}
 
 	protected void SetUp()
 	{
@@ -46,7 +47,9 @@ public class movement : MonoBehaviour
 		RB = gameObject.GetComponent<Rigidbody>();  //sets gameobject rigid body to RB 
 		man = GameObject.FindGameObjectWithTag ("manager").GetComponent<manager>();
 
+
 	}
+		
 
 	//raycast method that checks the four squares surrounding the piece
 
@@ -70,6 +73,8 @@ public class movement : MonoBehaviour
 		Debug.DrawRay(RB.transform.position,  RB.transform.forward * 1, Color.red);
 
 		Debug.DrawRay(RB.transform.position, (RB.transform.forward*-1) * 1, Color.red);
+
+
 	}
 
 
