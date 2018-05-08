@@ -3825,6 +3825,17 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e4d42b609b1ee364f88dff3608538464, type: 2}
+    - target: {fileID: 114923620807190302, guid: b808813e022eb954d9462be96e4f653e,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Press J and L to move the paddle left and right!
+
+
+        Press K to Shoot the Ball!
+
+
+        Your objective is to clear out all of the bricks as fast as possible! '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b808813e022eb954d9462be96e4f653e, type: 2}
   m_IsPrefabParent: 0
