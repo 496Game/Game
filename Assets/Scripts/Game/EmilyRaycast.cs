@@ -11,6 +11,7 @@ public class EmilyRaycast : MonoBehaviour {
 	public char[] notesThr = new char[] {'b','d','d','a','c','e','b'} ;
 
 	public int ap = 0 ; // array pointer
+	public bool isPlaying = false ; // this variable is going to check if the play button is playing
 
 	//bools to test the win state
 	public int gameNumber = 1 ;
@@ -31,7 +32,7 @@ public class EmilyRaycast : MonoBehaviour {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit)) {
+			if (Physics.Raycast(ray, out hit) && !isPlaying) {
                 if (hit.rigidbody != null) {
 					if (hit.transform.gameObject.layer != 8) {
 
@@ -135,7 +136,7 @@ public class EmilyRaycast : MonoBehaviour {
 
 	IEnumerator theIEnumerator () {
 		print ("You are doing the coroutine");
-
+		isPlaying = true;
 		char theNote ;
 
 		yield return new WaitForSeconds(1) ;
@@ -151,26 +152,31 @@ public class EmilyRaycast : MonoBehaviour {
 				case 'a':
 					patternToPlay [0].Play ();
 					print ("a");
+					playButton.GetComponent<Renderer> ().material.color = Color.red;
 					break;
 
 				case 'b':
 					patternToPlay [1].Play ();
 					Debug.Log ("b");
+					playButton.GetComponent<Renderer> ().material.color = Color.yellow;
 					break;
 
 				case 'c':
 					patternToPlay [2].Play ();
 					Debug.Log ("c");
+					playButton.GetComponent<Renderer> ().material.color = Color.green;
 					break;
 
 				case 'd':
 					patternToPlay [3].Play ();
 					Debug.Log ("d");
+					playButton.GetComponent<Renderer> ().material.color = Color.blue;
 					break;
 
 				case 'e':
 					patternToPlay [4].Play ();
 					Debug.Log ("e");
+					playButton.GetComponent<Renderer> ().material.color = Color.magenta;
 					break;
 
 				default:
@@ -190,26 +196,31 @@ public class EmilyRaycast : MonoBehaviour {
 				case 'a':
 					patternToPlay [0].Play ();
 					print ("a");
+					playButton.GetComponent<Renderer> ().material.color = Color.red;
 					break;
 
 				case 'b':
 					patternToPlay [1].Play ();
 					Debug.Log ("b");
+					playButton.GetComponent<Renderer> ().material.color = Color.yellow;
 					break;
 
 				case 'c':
 					patternToPlay [2].Play ();
 					Debug.Log ("c");
+					playButton.GetComponent<Renderer> ().material.color = Color.green;
 					break;
 
 				case 'd':
 					patternToPlay [3].Play ();
 					Debug.Log ("d");
+					playButton.GetComponent<Renderer> ().material.color = Color.blue;
 					break;
 
 				case 'e':
 					patternToPlay [4].Play ();
 					Debug.Log ("e");
+					playButton.GetComponent<Renderer> ().material.color = Color.magenta;
 					break;
 
 				default:
@@ -230,26 +241,31 @@ public class EmilyRaycast : MonoBehaviour {
 				case 'a':
 					patternToPlay [0].Play ();
 					print ("a");
+					playButton.GetComponent<Renderer> ().material.color = Color.red;
 					break;
 
 				case 'b':
 					patternToPlay [1].Play ();
 					Debug.Log ("b");
+					playButton.GetComponent<Renderer> ().material.color = Color.yellow;
 					break;
 
 				case 'c':
 					patternToPlay [2].Play ();
 					Debug.Log ("c");
+					playButton.GetComponent<Renderer> ().material.color = Color.green;
 					break;
 
 				case 'd':
 					patternToPlay [3].Play ();
 					Debug.Log ("d");
+					playButton.GetComponent<Renderer> ().material.color = Color.blue;
 					break;
 
 				case 'e':
 					patternToPlay [4].Play ();
 					Debug.Log ("e");
+					playButton.GetComponent<Renderer> ().material.color = Color.magenta;
 					break;
 
 				default:
@@ -262,5 +278,7 @@ public class EmilyRaycast : MonoBehaviour {
 		} else {
 			
 		} // end if else
+		playButton.GetComponent<Renderer> ().material.color = Color.white;
+		isPlaying = false;
 	} // end theIEnumerator
 }

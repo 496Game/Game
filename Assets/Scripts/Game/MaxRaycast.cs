@@ -16,6 +16,8 @@ public class MaxRaycast : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit)) {
                 if (hit.rigidbody != null) {
+
+                    //checks the button being pressed
 					if (hit.transform.tag == "left") 
 					{
 						hit.transform.gameObject.GetComponent<Renderer>().material.color = Color.blue;
