@@ -18,6 +18,8 @@ public class GameControl : MonoBehaviour {
 	public bool LukeGameComplete   = false;
 	public bool NicoleGameComplete = false;
 
+	public GameObject LukeManager;
+
 	public Text MaxStatus;
 	public Text EmilyStatus;
 	public Text LukeStatus;
@@ -147,8 +149,8 @@ public class GameControl : MonoBehaviour {
 				PreviousGame = EmilyGlass;
 				DoorMove.Play();
 				break;
-			case GameState.Luke:
-				GetComponent<LukeRaycast>().enabled = true;
+		case GameState.Luke:
+				LukeManager.SetActive (true);
 				LukeGlass.GetComponent<Animator>().SetTrigger("GlassUp");
 				PreviousGame = LukeGlass;
 				DoorMove.Play();
@@ -201,6 +203,7 @@ public class GameControl : MonoBehaviour {
 	}
 
 	public void DisableScripts() {
+		LukeManager.SetActive (false);
 		GetComponent<EmilyRaycast>().enabled  = false;
 		GetComponent<LukeRaycast>().enabled   = false;
 		GetComponent<MaxRaycast>().enabled    = false;
