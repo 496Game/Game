@@ -14,7 +14,7 @@ public class Paddle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float zPos = transform.position.z;
+		float zPos = Mathf.Clamp(transform.position.z,-4.61f, 5.71f);
 		if(Input.GetKey(KeyCode.L)){
 			zPos += paddleSpeed;
 		}

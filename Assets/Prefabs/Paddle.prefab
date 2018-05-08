@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3da282a878ff342828b38abf51afa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleSpeed: 0.1
+  paddleSpeed: 0.2
   playerPos: {x: -46.86, y: 3, z: 0.61}
 --- !u!114 &114696258984856818
 MonoBehaviour:
@@ -233,7 +233,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659603879627300}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2f8ac5dd9d352264ab695461870b3973, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.2560432
