@@ -196,7 +196,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -381,6 +381,10 @@ MonoBehaviour:
   EmilyGameComplete: 0
   LukeGameComplete: 1
   NicoleGameComplete: 0
+  MaxStatus: {fileID: 0}
+  EmilyStatus: {fileID: 0}
+  LukeStatus: {fileID: 0}
+  NicoleStatus: {fileID: 0}
   MaxButton: {fileID: 0}
   EmilyButton: {fileID: 0}
   LukeButton: {fileID: 0}
@@ -390,6 +394,7 @@ MonoBehaviour:
   LukeGlass: {fileID: 0}
   NicoleGlass: {fileID: 0}
   Door: {fileID: 0}
+  DoorMove: {fileID: 0}
   Timer: {fileID: 0}
 --- !u!114 &114254337054901078
 MonoBehaviour:
@@ -449,6 +454,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patternToPlay: []
   playButton: {fileID: 0}
-  notes: 640061006200
+  notesOne: 640061006200
+  notesTwo: 61006300650062006500
+  notesThr: 6200640064006100630065006200
   ap: 0
+  isPlaying: 0
+  gameNumber: 1
   emWinCondition: 0

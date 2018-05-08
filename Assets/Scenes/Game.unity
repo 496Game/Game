@@ -2696,6 +2696,115 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 428174, guid: 37e803394624a5c48ae5f13fd212ac0b, type: 2}
   m_PrefabInternal: {fileID: 1638198270}
+--- !u!1 &1246176777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1246176779}
+  - component: {fileID: 1246176778}
+  m_Layer: 0
+  m_Name: Glass_Move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1246176778
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246176777}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 68db7e4bb489643629ec251bdbf848a1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!4 &1246176779
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246176777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -46.860016, y: 3.0950017, z: 0.44000003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1250389218
 Prefab:
   m_ObjectHideFlags: 0
@@ -4293,10 +4402,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4184674085639170, guid: b978e1b65e6a74ed7a3781a6d4714b08, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 186.68
-      objectReference: {fileID: 0}
+    - target: {fileID: 114960519028713038, guid: b978e1b65e6a74ed7a3781a6d4714b08,
+        type: 2}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 287024196}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b978e1b65e6a74ed7a3781a6d4714b08, type: 2}
   m_IsPrefabParent: 0
@@ -4642,6 +4752,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114989254256047960, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: playButton
+      value: 
+      objectReference: {fileID: 1521893736}
+    - target: {fileID: 114561286724000306, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: lm
+      value: 
+      objectReference: {fileID: 477042316}
     - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 2}
       propertyPath: Timeline
@@ -4652,6 +4772,26 @@ Prefab:
       propertyPath: TimelineCamera
       value: 
       objectReference: {fileID: 549790581}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: MaxStatus
+      value: 
+      objectReference: {fileID: 2131991318}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: EmilyStatus
+      value: 
+      objectReference: {fileID: 1287316736}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: LukeStatus
+      value: 
+      objectReference: {fileID: 1335991569}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
+      propertyPath: NicoleStatus
+      value: 
+      objectReference: {fileID: 688414942}
     - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 2}
       propertyPath: MaxButton
@@ -4699,43 +4839,14 @@ Prefab:
       objectReference: {fileID: 102606451}
     - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
         type: 2}
+      propertyPath: DoorMove
+      value: 
+      objectReference: {fileID: 1246176778}
+    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 2}
       propertyPath: Timer
       value: 
       objectReference: {fileID: 538509726}
-    - target: {fileID: 114561286724000306, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: lm
-      value: 
-      objectReference: {fileID: 477042316}
-    - target: {fileID: 114989254256047960, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: playButton
-      value: 
-      objectReference: {fileID: 1521893736}
-    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: MaxStatus
-      value: 
-      objectReference: {fileID: 2131991318}
-    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: EmilyStatus
-      value: 
-      objectReference: {fileID: 1287316736}
-    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: LukeStatus
-      value: 
-      objectReference: {fileID: 1335991569}
-    - target: {fileID: 114034764853065064, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 2}
-      propertyPath: NicoleStatus
-      value: 
-      objectReference: {fileID: 688414942}
-    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
-      propertyPath: spreadCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0

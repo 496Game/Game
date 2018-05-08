@@ -15,6 +15,7 @@ public class GM : MonoBehaviour {
 	public GameObject paddle;
 	//public GameObject deathParticles;
 	public static GM instance = null;
+	public GameObject Player;
 
 	private GameObject clonePaddle;
 
@@ -44,6 +45,8 @@ public class GM : MonoBehaviour {
 			//Time.timeScale = .25f;
 			//Invoke ("Reset", resetDelay);
 			GAMEOVER = true;
+			Player.GetComponent<GameControl> ().LukeGameComplete = true;
+			Player.GetComponent<GameControl>().CheckVictory();
 		}
 
 		if (lives < 1)

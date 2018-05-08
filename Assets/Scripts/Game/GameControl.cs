@@ -15,7 +15,7 @@ public class GameControl : MonoBehaviour {
 
 	public bool MaxGameComplete    = false;
 	public bool EmilyGameComplete  = false;
-	public bool LukeGameComplete   = true;
+	public bool LukeGameComplete   = false;
 	public bool NicoleGameComplete = false;
 
 	public Text MaxStatus;
@@ -34,6 +34,7 @@ public class GameControl : MonoBehaviour {
 	public GameObject NicoleGlass;
 
 	public GameObject Door;
+	public AudioSource DoorMove;
 
 	public Text Timer;
 	float TimeRemaining = 600f;
@@ -77,7 +78,7 @@ public class GameControl : MonoBehaviour {
 
 	public void CheckVictory() {
 		if (MaxGameComplete) {
-			MaxButton.GetComponent<Renderer> ().material.color = Color.green;
+			MaxButton.transform.GetChild(0).GetComponent<Renderer> ().material.color = Color.green;
 			MaxButton.GetComponent<Collider> ().enabled = false;
 			MaxStatus.text = "Game Completed!";
 			MaxStatus.color = Color.green;
@@ -88,7 +89,7 @@ public class GameControl : MonoBehaviour {
 		}
 
 		if (EmilyGameComplete) {
-			EmilyButton.GetComponent<Renderer>().material.color = Color.green;
+			EmilyButton.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
 			EmilyButton.GetComponent<Collider> ().enabled = false;
 			EmilyStatus.text = "Game Completed!";
 			EmilyStatus.color = Color.green;
@@ -99,7 +100,7 @@ public class GameControl : MonoBehaviour {
 		}
 
 		if (LukeGameComplete) {
-			LukeButton.GetComponent<Renderer>().material.color = Color.green;
+			LukeButton.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
 			LukeButton.GetComponent<Collider> ().enabled = false;
 			LukeStatus.text = "Game Completed!";
 			LukeStatus.color = Color.green;
@@ -110,7 +111,7 @@ public class GameControl : MonoBehaviour {
 		}
 
 		if (NicoleGameComplete) {
-			NicoleButton.GetComponent<Renderer>().material.color = Color.green;
+			NicoleButton.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
 			NicoleButton.GetComponent<Collider> ().enabled = false;
 			NicoleStatus.text = "Game Completed!";
 			NicoleStatus.color = Color.green;
@@ -135,45 +136,49 @@ public class GameControl : MonoBehaviour {
 
 		switch (CurrentState) {
 			case GameState.Max:
-				GetComponent<MaxRaycast>().enabled = true;
-				MaxGlass.GetComponent<Animator>().SetTrigger("GlassUp");
+				GetComponent<MaxRaycast> ().enabled = true;
+				MaxGlass.GetComponent<Animator> ().SetTrigger ("GlassUp");
 				PreviousGame = MaxGlass;
+				DoorMove.Play();
 				break;
 			case GameState.Emily:
 				GetComponent<EmilyRaycast>().enabled = true;
 				EmilyGlass.GetComponent<Animator>().SetTrigger("GlassUp");
 				PreviousGame = EmilyGlass;
+				DoorMove.Play();
 				break;
 			case GameState.Luke:
 				GetComponent<LukeRaycast>().enabled = true;
 				LukeGlass.GetComponent<Animator>().SetTrigger("GlassUp");
 				PreviousGame = LukeGlass;
+				DoorMove.Play();
 				break;
 			case GameState.Nicole:
 				GetComponent<NicoleRaycast>().enabled = true;
 				NicoleGlass.GetComponent<Animator>().SetTrigger("GlassUp");
 				PreviousGame = NicoleGlass;
+				DoorMove.Play();
 				break;
-		case GameState.Win:
-			TimelineCamera.SetActive(true);
-			Timeline.GetComponent<PlayableDirector>().Play();
-			Door.GetComponent<Animator>().SetTrigger("DoorOpen");
-			Door.GetComponent<Collider>().enabled = true;
-			StopCoroutine("GameTimer");
-			PlayerPrefs.SetFloat("LastWin", EndTime);
+			case GameState.Win:
+				TimelineCamera.SetActive(true);
+				Timeline.GetComponent<PlayableDirector>().Play();
+				Door.GetComponent<Animator>().SetTrigger("DoorOpen");
+				Door.GetComponent<Collider>().enabled = true;
+				StopCoroutine("GameTimer");
+				PlayerPrefs.SetFloat("LastWin", EndTime);
 
-			var Scores = PlayerPrefs.GetString("scores", "0;0;0;0;0").Split(';').Select(s => float.Parse(s)).ToArray();
-			for (var ScoresIndex = 0; ScoresIndex < Scores.Length; ScoresIndex++) {
-				if (EndTime > Scores[ScoresIndex]) {
-					for (var ScoresShiftIndex = Scores.Length - 1; ScoresShiftIndex > ScoresIndex; ScoresShiftIndex--) {
-						Scores[ScoresShiftIndex] = Scores[ScoresShiftIndex - 1];
+				var Scores = PlayerPrefs.GetString("scores", "0;0;0;0;0").Split(';').Select(s => float.Parse(s)).ToArray();
+				for (var ScoresIndex = 0; ScoresIndex < Scores.Length; ScoresIndex++) {
+					if (EndTime > Scores[ScoresIndex]) {
+						for (var ScoresShiftIndex = Scores.Length - 1; ScoresShiftIndex > ScoresIndex; ScoresShiftIndex--) {
+							Scores[ScoresShiftIndex] = Scores[ScoresShiftIndex - 1];
+						}
+
+						Scores[ScoresIndex] = EndTime;
+
+						break;
 					}
-
-					Scores[ScoresIndex] = EndTime;
-
-					break;
 				}
-			}
 
 			PlayerPrefs.SetString("scores", string.Join(";", Scores.Select(i => i.ToString()).ToArray()));
 
