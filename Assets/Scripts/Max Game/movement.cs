@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-
+    //declares variables
 	public GameObject board;  //board that characters are moving on
 
 	[SerializeField]
@@ -66,41 +66,39 @@ public class movement : MonoBehaviour
 			onZChar = Physics.Raycast(RB.transform.position, RB.transform.forward, out hit, (1))&& hit.transform.tag == "player";
 			onNegZChar = Physics.Raycast(RB.transform.position, (RB.transform.forward*-1), out hit, (1))&& hit.transform.tag == "player";
 
-		Debug.DrawRay(RB.transform.position, RB.transform.right * 1, Color.red);
+
+        //debugs raycasting
+       /* Debug.DrawRay(RB.transform.position, RB.transform.right * 1, Color.red);
 
 		Debug.DrawRay(RB.transform.position,(RB.transform.right*-1) * 1, Color.red);
 
 		Debug.DrawRay(RB.transform.position,  RB.transform.forward * 1, Color.red);
 
-		Debug.DrawRay(RB.transform.position, (RB.transform.forward*-1) * 1, Color.red);
+		Debug.DrawRay(RB.transform.position, (RB.transform.forward*-1) * 1, Color.red);*/
 
 
 	}
 
-
+    //move functions
 
 	public void moveRight()
 	{
 		RB.transform.position += (RB.transform.forward);
-		//RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, RB.transform.position.z + moveZ);
 	}
 
 	public void moveLeft()
 	{
 		RB.transform.position += (RB.transform.forward * -1);
-		// RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, RB.transform.position.z - moveZ);
 	}
 
 	public void moveUp()
 	{
 		
 		RB.transform.position += (RB.transform.right*-1);
-		//RB.transform.position = new Vector3(RB.transform.position.x - moveX, RB.transform.position.y, RB.transform.position.z);
 	}
 
 	public void moveDown()
 	{
 		RB.transform.position += RB.transform.right;
-		// RB.transform.position = new Vector3(RB.transform.position.x + moveX, RB.transform.position.y, RB.transform.position.z);
 	}
 }

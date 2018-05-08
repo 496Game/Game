@@ -56,60 +56,65 @@ public class EnemyMove : movement {
 
 	public void structureMove()
 	{
+        //sets char pos
 		charPos = GameObject.FindGameObjectWithTag ("player").GetComponent<Transform>();
 
-		if (gameObject.transform.position.x < charPos.position.x)
-			moveDirX = charPos.position.x - gameObject.transform.position.x;
-		else
-			moveDirX = gameObject.transform.position.x + charPos.position.x;
+        //allows enemy to move forever and sets bools to false
+        int forever = 7 - count;
+        if (forever < 0)
+        {
+            forever = forever * -1;
+        }
+        bool blocked = false;
+        bool reset = false;
 
-		if (gameObject.transform.position.z < charPos.position.z)
-			moveDirZ = charPos.position.z - gameObject.transform.position.z;
-		else
-			moveDirZ = gameObject.transform.position.z + charPos.position.z;
-
-		if (moveDirX > gameObject.transform.position.x) 
-		{
-			print ("Left");
-			print(gameObject.transform.position.x);
-			print(charPos.position.x);
-		}
-
-		if (moveDirZ > gameObject.transform.position.z) 
-		{
-			print ("Down");
-			print(gameObject.transform.position.z);
-			print(charPos.position.z);
-		}
-
-		if (moveDirX < gameObject.transform.position.x) 
-		{
-			print ("Right");
-			print(gameObject.transform.position.x);
-			print(charPos.position.x);
-		}
-
-		if (moveDirZ < gameObject.transform.position.z) 
-		{
-			print ("Up");
-			print(gameObject.transform.position.z);
-			print(charPos.position.z);
-		}
-
-		int forever = 7 - count;
-		if (forever < 0)
-		{
-			forever = forever * -1;
-		}
-		bool blocked = false;
-		bool reset = false;
-
-		if (onNegXChar) 
-		{
+        //declares array and sets direction to random number
+        int[] closer = new int[2];
+        int[] farther = new int[2];
+        int direction = Random.Range(0, 5);
+        int choice = Random.Range(0, 2);
 			
+        //divides x positions into two arrays
+		if (charPos.position.x > gameObject.transform.position.x) 
+		{
+            closer[0] = 1;
+            farther[0] = 3;
+		}
+        else
+        {
+            closer[0] = 3;
+            farther[0] = 1;
+        }
+
+        //divides y into arrays
+        if (charPos.position.y > gameObject.transform.position.y) 
+		{
+            closer[1] = 0;
+            farther[1] = 2;
+        }
+           else
+		{
+            closer[1] = 2;
+            farther[1] = 0;
+
+        }
+
+
+        //slecects number from one of the two arrays and assigns it to count
+        if (direction <= 3)
+        {
+            count = closer[choice];
+        }
+        else
+        {
+            count = farther[choice];
+        }
+
+        //checks if player is nearby.  if true moves enemy on top of them
+        if (onNegXChar) 
+		{			
 			count = 3;
 			reset = true;
-
 		}
 		if (onNegZChar) 
 		{
@@ -126,67 +131,59 @@ public class EnemyMove : movement {
 			count = 1;
 			reset = true;
 		}
-		switch(moveArray[count])
+
+        //uses variable count to call 4 cases to decide on movement direction
+		switch(count)
 		{
 		case 3:
 
 			if(onNegZ)
 			{
 				blocked = true;
-				print ("skipped case 3");
 			}
 
 			else
 				moveLeft();
-			moveArray[forever] = Random.Range(0, 4);
 			break;
 
 		case 2:
 			if (onX)
 			{
 				blocked = true;
-				print ("skipped case 2");
 			}
 
 			else
 				moveDown();
-			moveArray[forever] = Random.Range(0, 4);
 			break;
 
 		case 1:
 			if (onZ)
 			{
 				blocked = true;
-				print ("skipped case 1");
 			}
 
 			else
 				moveRight();
-			moveArray[forever] = Random.Range(0, 4);
 			break;
 
 		case 0:
 			if (onNegX) {
 				blocked = true;
-				print ("skipped case 0");
 			} else
 				moveUp();
-			moveArray[forever] = Random.Range(0,4);
 			break;
 
 		default:
-			Debug.Log("cant move");
 			break;
 		}
-		if (((count+ 1) % 10) == 0)
-			count = 0;
 
-		else
-			count++;
+        //if enemy cant move calls function again
 		if(blocked)
 		{
 			structureMove();
 		}
+
+        //if reset is true resets positions
 		if (reset) 
 		{
 			man.reset = true;
