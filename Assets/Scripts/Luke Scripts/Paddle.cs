@@ -18,7 +18,7 @@ public class Paddle : MonoBehaviour {
 		if(Input.GetKey(KeyCode.L)){
 			zPos += paddleSpeed;
 		}
-		if(Input.GetKey(KeyCode.K)){
+		if(Input.GetKey(KeyCode.J)){
 			zPos -= paddleSpeed;
 		}
 		playerPos = new Vector3 (-46.86f, 3.02f, zPos);

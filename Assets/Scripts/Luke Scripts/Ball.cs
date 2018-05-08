@@ -25,4 +25,12 @@ public class Ball : MonoBehaviour {
 			rb.AddForce(new Vector3(ballInitialVelocity, ballInitialVelocity, 0));
 		}
 	}
+
+	public void ballMove(){
+		transform.parent = null;
+		ballInPlay = true;
+		rb.isKinematic = false;
+		rb.AddForce(new Vector3(ballInitialVelocity, ballInitialVelocity, 0));
+	
+	}
 }
