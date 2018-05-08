@@ -1019,6 +1019,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114923620807190302, guid: b808813e022eb954d9462be96e4f653e,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Use J to move left and L to move right! Press K to bounce the ball into
+        the bricks!
+
+
+        Win: Break all of the blocks in the level!
+
+
+        Lose: Have the ball fall down past the paddle 3 times!'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b808813e022eb954d9462be96e4f653e, type: 2}
   m_IsPrefabParent: 0
