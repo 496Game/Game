@@ -40,10 +40,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4386074696831784}
   - component: {fileID: 33403536566698292}
-  - component: {fileID: 65482266060200922}
   - component: {fileID: 23326344922178918}
   - component: {fileID: 114132521547495848}
   - component: {fileID: 54806192770131836}
+  - component: {fileID: 136381197261646946}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -190,18 +190,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 2
   m_CollisionDetection: 0
---- !u!65 &65482266060200922
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659603879627300}
-  m_Material: {fileID: 13400000, guid: 2f8ac5dd9d352264ab695461870b3973, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114132521547495848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,3 +227,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136381197261646946
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659603879627300}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2560432
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.00000047683716, z: 0}
