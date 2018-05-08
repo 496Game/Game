@@ -13,7 +13,7 @@ public class GM : MonoBehaviour {
 	public GameObject youWon;
 	public GameObject bricksPrefab;
 	public GameObject paddle;
-	//public GameObject deathParticles;
+	public GameObject deathParticles;
 	public static GM instance = null;
 
 	private GameObject clonePaddle;
@@ -49,7 +49,7 @@ public class GM : MonoBehaviour {
 		if (lives < 1)
 		{
 			gameOver.SetActive(true);
-			//Time.timeScale = .25f;
+			Time.timeScale = .25f;
 			Reset ();
 			//Invoke ("Reset", resetDelay);
 		}
@@ -62,7 +62,6 @@ public class GM : MonoBehaviour {
 		Time.timeScale = 1f;
 		Instantiate(bricksPrefab, new Vector3(-40.63718f, 5.977097f, -.871537f), Quaternion.identity);
 		lives = 3;
-		bricks = 20;
 		livesText.text = "Lives: " + lives;
 		gameOver.SetActive (false);
 	}

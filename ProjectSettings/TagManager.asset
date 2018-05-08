@@ -24,8 +24,6 @@ TagManager:
   - up
   - down
   - brick
-  - Paddle
-  - Ball
   layers:
   - Default
   - TransparentFX
