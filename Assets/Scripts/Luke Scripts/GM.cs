@@ -41,8 +41,8 @@ public class GM : MonoBehaviour {
 		if (bricks < 1)
 		{
 			youWon.SetActive(true);
-			Time.timeScale = .25f;
-			Invoke ("Reset", resetDelay);
+			//Time.timeScale = .25f;
+			//Invoke ("Reset", resetDelay);
 			GAMEOVER = true;
 		}
 

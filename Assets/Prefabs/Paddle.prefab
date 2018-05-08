@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3da282a878ff342828b38abf51afa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleSpeed: 0.2
+  paddleSpeed: 0.17
   playerPos: {x: -46.86, y: 3, z: 0.61}
 --- !u!114 &114696258984856818
 MonoBehaviour:
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b356dc1decabd438277da8871e66b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballInitialVelocity: 600
+  ballInitialVelocity: 450
 --- !u!135 &135701902237572818
 SphereCollider:
   m_ObjectHideFlags: 1
