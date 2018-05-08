@@ -48,18 +48,22 @@ public class GameControl : MonoBehaviour {
 
 	public void MaxGame() {
 		CurrentState = GameState.Max;
+		MaxButton.GetComponent<Animator>().SetTrigger("Switch");
 	}
 
 	public void EmilyGame() {
 		CurrentState = GameState.Emily;
+		EmilyButton.GetComponent<Animator>().SetTrigger("Switch");
 	}
 
 	public void LukeGame() {
 		CurrentState = GameState.Luke;
+		LukeButton.GetComponent<Animator>().SetTrigger("Switch");
 	}
 
 	public void NicoleGame() {
 		CurrentState = GameState.Nicole;
+		NicoleButton.GetComponent<Animator>().SetTrigger("Switch");
 	}
 
 	public void CheckStatus(Text state, bool complete) {
