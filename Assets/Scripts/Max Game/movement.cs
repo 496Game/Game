@@ -68,7 +68,7 @@ public class movement : MonoBehaviour
 
 
         //debugs raycasting
-       /* Debug.DrawRay(RB.transform.position, RB.transform.right * 1, Color.red);
+        /*Debug.DrawRay(RB.transform.position, RB.transform.right * 1, Color.red);
 
 		Debug.DrawRay(RB.transform.position,(RB.transform.right*-1) * 1, Color.red);
 
