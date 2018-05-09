@@ -5,6 +5,7 @@ using UnityEngine;
 public class MaxRaycast : MonoBehaviour {
 
 	charMove move;
+    manager man;
 
 	void Start()
 	{
@@ -41,6 +42,12 @@ public class MaxRaycast : MonoBehaviour {
 						hit.transform.gameObject.GetComponent<Renderer>().material.color = Color.blue;
 						move.down = true;
 					}
+
+                    if(hit.transform.tag == "reset")
+                    {
+                        hit.transform.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                        man.reset = true;
+                    }
 				}
 			}
         }

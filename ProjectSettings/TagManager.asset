@@ -26,6 +26,7 @@ TagManager:
   - brick
   - Paddle
   - Ball
+  - reset
   layers:
   - Default
   - TransparentFX
