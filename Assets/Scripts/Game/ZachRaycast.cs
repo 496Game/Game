@@ -7,12 +7,10 @@ public class ZachRaycast : MonoBehaviour {
 		if (Input.GetMouseButtonUp(0)) {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit)) {
+            if (Physics.Raycast(ray, out hit, 100)) {
                 if (hit.rigidbody != null) {
 					if (hit.transform.gameObject.layer == 8) {
 						var tag = hit.transform.gameObject.tag;
-
-						Debug.Log("Why");
 
 						if (tag == "MaxGame") {
 							GetComponent<GameControl>().MaxGame();

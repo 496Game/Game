@@ -17,6 +17,8 @@ public class EmilyRaycast : MonoBehaviour {
 	public int gameNumber = 1 ;
 	public bool emWinCondition = false ; // the varable checks if you have won or not
 
+	bool win = false;
+
 	void Start() {
 		patternToPlay = playButton.GetComponents<AudioSource> ();
 		//patternToPlay [0].Play ();
@@ -115,10 +117,13 @@ public class EmilyRaycast : MonoBehaviour {
 
 		// check to see if the player has won all three games
 		if (gameNumber >3) {
-			emWinCondition = true;
+			if (!win) {
+				emWinCondition = true;
 
-			GetComponent<GameControl>().EmilyGameComplete = true;
-			GetComponent<GameControl>().CheckVictory();
+				GetComponent<GameControl>().EmilyGameComplete = true;
+				GetComponent<GameControl>().CheckVictory();
+				win = true;
+			}
 		}
 
 	} // end Update()

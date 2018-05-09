@@ -37,6 +37,7 @@ public class GameControl : MonoBehaviour {
 
 	public GameObject Door;
 	public AudioSource DoorMove;
+	public AudioSource GameWin;
 
 	public Text Timer;
 	float TimeRemaining = 600f;
@@ -84,6 +85,7 @@ public class GameControl : MonoBehaviour {
 			MaxButton.GetComponent<Collider> ().enabled = false;
 			MaxStatus.text = "Game Completed!";
 			MaxStatus.color = Color.green;
+			GameWin.Play();
 		} 
 		else {
 			MaxStatus.text = "Needs to be done!";
@@ -95,6 +97,7 @@ public class GameControl : MonoBehaviour {
 			EmilyButton.GetComponent<Collider> ().enabled = false;
 			EmilyStatus.text = "Game Completed!";
 			EmilyStatus.color = Color.green;
+			GameWin.Play();
 		} 
 		else {
 			EmilyStatus.text = "Needs to be done!";
@@ -106,6 +109,7 @@ public class GameControl : MonoBehaviour {
 			LukeButton.GetComponent<Collider> ().enabled = false;
 			LukeStatus.text = "Game Completed!";
 			LukeStatus.color = Color.green;
+			GameWin.Play();
 		} 
 		else {
 			LukeStatus.text = "Needs to be done!";
@@ -117,6 +121,7 @@ public class GameControl : MonoBehaviour {
 			NicoleButton.GetComponent<Collider> ().enabled = false;
 			NicoleStatus.text = "Game Completed!";
 			NicoleStatus.color = Color.green;
+			GameWin.Play();
 		} 
 		else {
 			NicoleStatus.text = "Needs to be done!";
@@ -199,6 +204,10 @@ public class GameControl : MonoBehaviour {
 			if (Timeline.GetComponent<PlayableDirector>().state != PlayState.Playing) {
 				TimelineCamera.SetActive(false);				
 			}
+		}
+
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			SceneManager.LoadScene("MainMenu");
 		}
 	}
 

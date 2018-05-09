@@ -12,5 +12,9 @@ public class MusicController : MonoBehaviour {
 		}
 
 		DontDestroyOnLoad(this.gameObject);
+
+		if (FindObjectsOfType(GetType()).Length > 1) {
+			Destroy(gameObject);
+		}
 	}
 }

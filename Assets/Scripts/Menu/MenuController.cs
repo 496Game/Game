@@ -9,6 +9,8 @@ public class MenuController : MonoBehaviour {
 	public GameObject Options;
 	public GameObject Scoreboard;
 
+	public GameObject Music;
+
 	public AudioSource ButtonClick;
 
 	public Text Score1;
@@ -23,11 +25,11 @@ public class MenuController : MonoBehaviour {
 
 		var Scores = PlayerPrefs.GetString("scores", "0;0;0;0;0").Split(';').Select(s => float.Parse(s)).ToArray();
 
-		Score1.text = "Time Remaining: " + Scores[0].ToString();
-		Score2.text = "Time Remaining: " + Scores[1].ToString();
-		Score3.text = "Time Remaining: " + Scores[2].ToString();
-		Score4.text = "Time Remaining: " + Scores[3].ToString();
-		Score5.text = "Time Remaining: " + Scores[4].ToString();
+		Score1.text = "Time Remaining: " + Mathf.Floor((Scores[0] / 60)).ToString("00") + ":" + (Scores[0] % 60).ToString("00");
+		Score2.text = "Time Remaining: " + Mathf.Floor((Scores[1] / 60)).ToString("00") + ":" + (Scores[1] % 60).ToString("00");
+		Score3.text = "Time Remaining: " + Mathf.Floor((Scores[2] / 60)).ToString("00") + ":" + (Scores[2] % 60).ToString("00");
+		Score4.text = "Time Remaining: " + Mathf.Floor((Scores[3] / 60)).ToString("00") + ":" + (Scores[3] % 60).ToString("00");
+		Score5.text = "Time Remaining: " + Mathf.Floor((Scores[4] / 60)).ToString("00") + ":" + (Scores[4] % 60).ToString("00");
 	}
 
 	public void PlayGame() {
@@ -61,9 +63,11 @@ public class MenuController : MonoBehaviour {
 	public void ChangeMusic() {
 		if (PlayerPrefs.GetInt ("music", 0) == 1) {
 			PlayerPrefs.SetInt ("music", 0);
+			Music.SetActive(false);
 		} 
 		else {
 			PlayerPrefs.SetInt ("music", 1);
+			Music.SetActive(true);
 		}
 	}
 }
